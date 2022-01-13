@@ -1,0 +1,857 @@
+
+reading train images...
+100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:00<00:00, 919803.51it/s]
+ 18%|████████████████████▎                                                                                            | 18/100 [00:00<00:03, 20.51it/s]
+preprocessing train volumes...
+
+
+100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:06<00:00, 16.18it/s]
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:00<00:00, 200.74it/s]
+  0%|                                                                                                                          | 0/100 [00:00<?, ?it/s]
+padding train volumes...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 99%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████▊ | 99/100 [01:11<00:00,  1.08it/s]
+100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [01:13<00:00,  1.37it/s]
+ 53%|███████████████████████████████████████████████████████████▉                                                     | 53/100 [00:01<00:01, 46.61it/s]
+done creating train dataset
+
+100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:01<00:00, 50.00it/s]
+preprocessing validation volumes...
+cropping validation volumes...
+padding validation volumes...
+resizing validation volumes...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:00<00:00, 85948.85it/s]
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:00<00:00, 13.95it/s]
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:00<00:00, 354.50it/s]
+
+
+
+ 90%|███████████████████████████████████████████████████████████████████████████████████████████████████████▌           | 9/10 [00:07<00:00,  1.56it/s]
+normalizing validation volumes...
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:08<00:00,  1.19it/s]
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:00<00:00, 46.10it/s]
+/mnt/nfs/rdata02-users/users/makaroff/UNet2D/lib/python3.8/site-packages/pytorch_lightning/trainer/connectors/accelerator_connector.py:286: LightningDeprecationWarning: Passing `Trainer(accelerator='ddp')` has been deprecated in v1.5 and will be removed in v1.7. Use `Trainer(strategy='ddp')` instead.
+  rank_zero_deprecation(
+GPU available: True, used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+initializing distributed: GLOBAL_RANK: 0, MEMBER: 1/1
+----------------------------------------------------------------------------------------------------
+distributed_backend=nccl
+All distributed processes registered. Starting with 1 processes
+----------------------------------------------------------------------------------------------------
+Epoch 0:   2%|█▌                                                                                           | 4/232 [00:01<01:07,  3.38it/s, loss=0.969]
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+   | Name       | Type            | Params
+------------------------------------------------
+0  | encoder1   | Sequential      | 10.2 K
+1  | pool1      | MaxPool2d       | 0
+2  | encoder2   | Sequential      | 55.6 K
+3  | pool2      | MaxPool2d       | 0
+4  | encoder3   | Sequential      | 221 K
+5  | pool3      | MaxPool2d       | 0
+6  | encoder4   | Sequential      | 885 K
+7  | pool4      | MaxPool2d       | 0
+8  | bottleneck | Sequential      | 3.5 M
+9  | upconv4    | ConvTranspose2d | 524 K
+10 | decoder4   | Sequential      | 1.8 M
+11 | upconv3    | ConvTranspose2d | 131 K
+12 | decoder3   | Sequential      | 442 K
+13 | upconv2    | ConvTranspose2d | 32.8 K
+14 | decoder2   | Sequential      | 110 K
+15 | upconv1    | ConvTranspose2d | 8.2 K
+16 | decoder1   | Sequential      | 27.8 K
+17 | conv       | Conv2d          | 33
+------------------------------------------------
+7.8 M     Trainable params
+0         Non-trainable params
+7.8 M     Total params
+31.052    Total estimated model params size (MB)
+/mnt/nfs/rdata02-users/users/makaroff/UNet2D/lib/python3.8/site-packages/pytorch_lightning/callbacks/model_checkpoint.py:631: UserWarning: Checkpoint directory /mnt/nfs/rdata02-users/users/makaroff/UNet_pytorch/None/version_None/checkpoints exists and is not empty.
+  rank_zero_warn(f"Checkpoint directory {dirpath} exists and is not empty.")
+/mnt/nfs/rdata02-users/users/makaroff/UNet2D/lib/python3.8/site-packages/pytorch_lightning/trainer/data_loading.py:132: UserWarning: The dataloader, val_dataloader 0, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 40 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+/mnt/nfs/rdata02-users/users/makaroff/UNet2D/lib/python3.8/site-packages/pytorch_lightning/trainer/data_loading.py:132: UserWarning: The dataloader, train_dataloader, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 40 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 0:  94%|█████████████████████████████████████████████████████████████████████████████████████▉     | 219/232 [00:29<00:01,  7.54it/s, loss=0.952]
+
+Validating:  50%|███████████████████████████████████████████████████                                                   | 12/24 [00:00<00:00, 41.43it/s]
+/mnt/nfs/rdata02-users/users/makaroff/UNet2D/lib/python3.8/site-packages/pytorch_lightning/loggers/wandb.py:341: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 4:  96%|███████████████████████████████████████████████████████████████████████████▌   | 222/232 [00:28<00:01,  7.80it/s, loss=0.904, v_num=serk]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 5:  96%|███████████████████████████████████████████████████████████████████████████▌   | 222/232 [00:28<00:01,  7.75it/s, loss=0.898, v_num=serk]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 6:  93%|█████████████████████████████████████████████████████████████████████████▌     | 216/232 [00:28<00:02,  7.64it/s, loss=0.844, v_num=serk]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 7:  98%|█████████████████████████████████████████████████████████████████████████████▋ | 228/232 [00:28<00:00,  7.94it/s, loss=0.838, v_num=serk]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 10:  91%|██████████████████████████████████████████████████████████████████████▌       | 210/232 [00:28<00:02,  7.46it/s, loss=0.641, v_num=serk]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 11:  91%|███████████████████████████████████████████████████████████████████████▌       | 210/232 [00:28<00:02,  7.45it/s, loss=0.49, v_num=serk]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 12:  98%|█████████████████████████████████████████████████████████████████████████████▋ | 228/232 [00:28<00:00,  7.94it/s, loss=0.44, v_num=serk]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 17:  91%|██████████████████████████████████████████████████████████████████████▌       | 210/232 [00:28<00:02,  7.35it/s, loss=0.224, v_num=serk]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 18:  91%|██████████████████████████████████████████████████████████████████████▌       | 210/232 [00:28<00:02,  7.37it/s, loss=0.212, v_num=serk]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 19:  98%|████████████████████████████████████████████████████████████████████████████▋ | 228/232 [00:28<00:00,  7.93it/s, loss=0.235, v_num=serk]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 26:  96%|███████████████████████████████████████████████████████████████████████████▌   | 222/232 [00:28<00:01,  7.73it/s, loss=0.17, v_num=serk]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 27:  96%|██████████████████████████████████████████████████████████████████████████▋   | 222/232 [00:28<00:01,  7.74it/s, loss=0.176, v_num=serk]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 33:  91%|██████████████████████████████████████████████████████████████████████▌       | 210/232 [00:28<00:02,  7.37it/s, loss=0.167, v_num=serk]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 34:  93%|████████████████████████████████████████████████████████████████████████▌     | 216/232 [00:28<00:02,  7.57it/s, loss=0.149, v_num=serk]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 35:  98%|█████████████████████████████████████████████████████████████████████████████▋ | 228/232 [00:28<00:00,  7.94it/s, loss=0.15, v_num=serk]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 36:  96%|██████████████████████████████████████████████████████████████████████████▋   | 222/232 [00:28<00:01,  7.66it/s, loss=0.155, v_num=serk]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 37:  98%|█████████████████████████████████████████████████████████████████████████████▋ | 228/232 [00:29<00:00,  7.85it/s, loss=0.16, v_num=serk]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 38:  98%|████████████████████████████████████████████████████████████████████████████▋ | 228/232 [00:29<00:00,  7.83it/s, loss=0.146, v_num=serk]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 40:  98%|████████████████████████████████████████████████████████████████████████████▋ | 228/232 [00:29<00:00,  7.77it/s, loss=0.155, v_num=serk]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 49:  91%|███████████████████████████████████████████████████████████████████████▌       | 210/232 [00:28<00:03,  7.33it/s, loss=0.14, v_num=serk]
+
+Validating:  25%|█████████████████████████▊                                                                             | 6/24 [00:00<00:00, 50.74it/s]

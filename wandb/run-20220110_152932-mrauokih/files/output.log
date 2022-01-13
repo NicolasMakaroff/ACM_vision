@@ -1,0 +1,249 @@
+
+reading train images...
+100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:00<00:00, 754371.22it/s]
+  3%|███▍                                                                                                              | 3/100 [00:00<00:03, 27.84it/s]
+preprocessing train volumes...
+
+
+
+ 97%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████▌   | 97/100 [00:05<00:00, 22.18it/s]
+padding train volumes...
+100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:06<00:00, 16.17it/s]
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:00<00:00, 183.89it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 99%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████▊ | 99/100 [01:11<00:00,  1.08it/s]
+100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [01:13<00:00,  1.36it/s]
+ 18%|████████████████████▎                                                                                            | 18/100 [00:00<00:01, 71.81it/s]
+done creating train dataset
+
+100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 49.92it/s]
+preprocessing validation volumes...
+cropping validation volumes...
+padding validation volumes...
+resizing validation volumes...
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:00<00:00, 183157.38it/s]
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:00<00:00, 13.85it/s]
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:00<00:00, 338.12it/s]
+
+
+
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:08<00:00,  1.20it/s]
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:00<00:00, 42.28it/s]
+normalizing validation volumes...
+done creating validation dataset
+/mnt/nfs/rdata02-users/users/makaroff/UNet2D/lib/python3.8/site-packages/pytorch_lightning/trainer/connectors/accelerator_connector.py:286: LightningDeprecationWarning: Passing `Trainer(accelerator='ddp')` has been deprecated in v1.5 and will be removed in v1.7. Use `Trainer(strategy='ddp')` instead.
+  rank_zero_deprecation(
+GPU available: True, used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+initializing distributed: GLOBAL_RANK: 0, MEMBER: 1/1
+----------------------------------------------------------------------------------------------------
+distributed_backend=nccl
+All distributed processes registered. Starting with 1 processes
+----------------------------------------------------------------------------------------------------
+Validation sanity check:   0%|                                                                                                   | 0/2 [00:00<?, ?it/s]torch.Size([3, 64, 64])
+torch.Size([3, 64, 64])
+torch.Size([3, 64, 64])
+torch.Size([3, 64, 64])
+torch.Size([3, 64, 64])
+torch.Size([3, 64, 64])
+torch.Size([3, 64, 64])
+torch.Size([3, 64, 64])
+torch.Size([3, 64, 64])
+torch.Size([3, 64, 64])
+Epoch 0:   0%|▍                                                                                            | 1/232 [00:00<02:20,  1.64it/s, loss=0.983]
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+   | Name       | Type            | Params
+------------------------------------------------
+0  | encoder1   | Sequential      | 10.2 K
+1  | pool1      | MaxPool2d       | 0
+2  | encoder2   | Sequential      | 55.6 K
+3  | pool2      | MaxPool2d       | 0
+4  | encoder3   | Sequential      | 221 K
+5  | pool3      | MaxPool2d       | 0
+6  | encoder4   | Sequential      | 885 K
+7  | pool4      | MaxPool2d       | 0
+8  | bottleneck | Sequential      | 3.5 M
+9  | upconv4    | ConvTranspose2d | 524 K
+10 | decoder4   | Sequential      | 1.8 M
+11 | upconv3    | ConvTranspose2d | 131 K
+12 | decoder3   | Sequential      | 442 K
+13 | upconv2    | ConvTranspose2d | 32.8 K
+14 | decoder2   | Sequential      | 110 K
+15 | upconv1    | ConvTranspose2d | 8.2 K
+16 | decoder1   | Sequential      | 27.8 K
+17 | conv       | Conv2d          | 33
+------------------------------------------------
+7.8 M     Trainable params
+0         Non-trainable params
+7.8 M     Total params
+31.052    Total estimated model params size (MB)
+/mnt/nfs/rdata02-users/users/makaroff/UNet2D/lib/python3.8/site-packages/pytorch_lightning/callbacks/model_checkpoint.py:631: UserWarning: Checkpoint directory /mnt/nfs/rdata02-users/users/makaroff/UNet_pytorch/None/version_None/checkpoints exists and is not empty.
+  rank_zero_warn(f"Checkpoint directory {dirpath} exists and is not empty.")
+/mnt/nfs/rdata02-users/users/makaroff/UNet2D/lib/python3.8/site-packages/pytorch_lightning/trainer/data_loading.py:132: UserWarning: The dataloader, val_dataloader 0, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 40 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+/mnt/nfs/rdata02-users/users/makaroff/UNet2D/lib/python3.8/site-packages/pytorch_lightning/trainer/data_loading.py:132: UserWarning: The dataloader, train_dataloader, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 40 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 0: 100%|███████████████████████████████████████████████████████████████████████████████████████████| 232/232 [00:29<00:00,  7.96it/s, loss=0.938]
+torch.Size([3, 64, 64])███████████████████████████████████████████████████████████████████████████████████▎            | 21/24 [00:00<00:00, 38.48it/s]
+torch.Size([3, 64, 64])
+torch.Size([3, 64, 64])
+torch.Size([3, 64, 64])
+torch.Size([3, 64, 64])
+torch.Size([3, 64, 64])
+torch.Size([3, 64, 64])
+torch.Size([3, 64, 64])
+torch.Size([3, 64, 64])
+Epoch 1:   3%|██                                                                               | 6/232 [00:00<00:35,  6.41it/s, loss=0.931, v_num=okih]
+/mnt/nfs/rdata02-users/users/makaroff/UNet2D/lib/python3.8/site-packages/pytorch_lightning/loggers/wandb.py:341: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 1:  99%|██████████████████████████████████████████████████████████████████████████████▎| 230/232 [00:28<00:00,  8.09it/s, loss=0.914, v_num=okih]torch.Size([3, 64, 64])
+torch.Size([3, 64, 64])███████████████████████████████████████████████████████████████████████████████████▎            | 21/24 [00:00<00:00, 38.48it/s]
+torch.Size([3, 64, 64])
+torch.Size([3, 64, 64])
+torch.Size([3, 64, 64])
+torch.Size([3, 64, 64])
+torch.Size([3, 64, 64])
+torch.Size([3, 64, 64])
+torch.Size([3, 64, 64])
+torch.Size([3, 64, 64])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 2:  99%|██████████████████████████████████████████████████████████████████████████████▎| 230/232 [00:28<00:00,  8.12it/s, loss=0.872, v_num=okih]torch.Size([3, 64, 64])
+torch.Size([3, 64, 64])███████████████████████████████████████████████████████████████████████████████████▎            | 21/24 [00:00<00:00, 38.50it/s]
+torch.Size([3, 64, 64])
+torch.Size([3, 64, 64])
+torch.Size([3, 64, 64])
+torch.Size([3, 64, 64])
+torch.Size([3, 64, 64])
+torch.Size([3, 64, 64])
+torch.Size([3, 64, 64])
+torch.Size([3, 64, 64])
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 3:  91%|███████████████████████████████████████████████████████████████████████▌       | 210/232 [00:27<00:02,  7.52it/s, loss=0.842, v_num=okih]
+torch.Size([3, 64, 64])███████████████████████████████████████████████████████████████████████████████████▎            | 21/24 [00:00<00:00, 38.54it/s]
+torch.Size([3, 64, 64])
+torch.Size([3, 64, 64])
+torch.Size([3, 64, 64])
+torch.Size([3, 64, 64])
+torch.Size([3, 64, 64])
+torch.Size([3, 64, 64])
+torch.Size([3, 64, 64])
+torch.Size([3, 64, 64])
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 4:  99%|██████████████████████████████████████████████████████████████████████████████▎| 230/232 [00:28<00:00,  8.11it/s, loss=0.765, v_num=okih]
+torch.Size([3, 64, 64])███████████████████████████████████████████████████████████████████████████████████▎            | 21/24 [00:00<00:00, 38.51it/s]
+torch.Size([3, 64, 64])
+torch.Size([3, 64, 64])
+torch.Size([3, 64, 64])
+torch.Size([3, 64, 64])
+torch.Size([3, 64, 64])
+torch.Size([3, 64, 64])
+torch.Size([3, 64, 64])
+torch.Size([3, 64, 64])
+
+
+
+
+
+
+
+
+Epoch 5:  49%|██████████████████████████████████████▊                                        | 114/232 [00:15<00:16,  7.31it/s, loss=0.739, v_num=okih]
+/mnt/nfs/rdata02-users/users/makaroff/UNet2D/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py:688: UserWarning: Detected KeyboardInterrupt, attempting graceful shutdown...
+  rank_zero_warn("Detected KeyboardInterrupt, attempting graceful shutdown...")

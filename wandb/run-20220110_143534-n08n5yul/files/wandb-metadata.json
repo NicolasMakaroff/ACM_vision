@@ -1,0 +1,16 @@
+{
+    "os": "Linux-5.4.0-80-generic-x86_64-with-glibc2.29",
+    "python": "3.8.10",
+    "heartbeatAt": "2022-01-10T13:35:35.196675",
+    "startedAt": "2022-01-10T13:35:34.198802",
+    "docker": null,
+    "cpu_count": 40,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "train.py",
+    "codePath": "train.py",
+    "host": "clust5",
+    "username": "makaroff",
+    "executable": "/mnt/nfs/rdata02-users/users/makaroff/UNet2D/bin/python3"
+}
