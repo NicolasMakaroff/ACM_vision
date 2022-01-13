@@ -27,6 +27,7 @@ class UNet(pl.LightningModule):
         self.pool4 = nn.MaxPool2d(kernel_size=2, stride=2)
 
         self.bottleneck = UNet._block(features * 8, features * 16, name="bottleneck")
+        
 
         self.upconv4 = nn.ConvTranspose2d(
             features * 16, features * 8, kernel_size=2, stride=2
