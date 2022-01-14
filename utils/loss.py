@@ -1,7 +1,7 @@
 import torch.nn as nn
 import numpy as np
 import torch
-from scipy.ndimage import distance_transform_edt
+from scipy.ndimage.morphology import distance_transform_edt as edt
 
 
 class DiceLoss(nn.Module):
@@ -65,22 +65,20 @@ class HDDTBinaryLoss(nn.Module):
         net_output: (batch_size, 2, x,y,z)
         target: ground truth, shape: (batch_size, 1, x,y,z)
         """
-        net_output = softmax_helper(net_output)
-        pc = net_output[:, 1, ...].type(torch.float32)
+        #net_output = softmax_helper(net_output)
+        pc = net_output[:, 0, ...].type(torch.float32)
         gt = target[:,0, ...].type(torch.float32)
         with torch.no_grad():
             pc_dist = compute_edts_forhdloss(pc.cpu().numpy()>0.5)
             gt_dist = compute_edts_forhdloss(gt.cpu().numpy()>0.5)
-        # print('pc_dist.shape: ', pc_dist.shape)
         
         pred_error = (gt - pc)**2
         dist = pc_dist**2 + gt_dist**2 # \alpha=2 in eq(8)
-
         dist = torch.from_numpy(dist)
         if dist.device != pred_error.device:
             dist = dist.to(pred_error.device).type(torch.float32)
 
-        multipled = torch.einsum("bxyz,bxyz->bxyz", pred_error, dist)
+        multipled = torch.einsum("bxy,bxy->bxy", pred_error, dist)
         hd_loss = multipled.mean()
 
         return hd_loss
@@ -101,3 +99,103 @@ def compute_edts_forhdloss(segmentation):
         negmask = ~posmask
         res[i] = distance_transform_edt(posmask) + distance_transform_edt(negmask)
     return res
+
+"""
+Hausdorff loss implementation based on paper:
+https://arxiv.org/pdf/1904.10030.pdf
+copy pasted from - all credit goes to original authors:
+https://github.com/SilmarilBearer/HausdorffLoss
+"""
+
+
+class HausdorffDTLoss(nn.Module):
+    """Binary Hausdorff loss based on distance transform"""
+
+    def __init__(self, alpha=2.0, **kwargs):
+        super(HausdorffDTLoss, self).__init__()
+        self.alpha = alpha
+
+    @torch.no_grad()
+    def distance_field(self, img: np.ndarray) -> np.ndarray:
+        field = np.zeros_like(img)
+
+        for batch in range(len(img)):
+            fg_mask = img[batch] > 0.5
+
+            if fg_mask.any():
+                bg_mask = ~fg_mask
+
+                fg_dist = edt(fg_mask)
+                bg_dist = edt(bg_mask)
+
+                field[batch] = fg_dist + bg_dist
+
+        return field
+
+    def forward(
+        self, pred: torch.Tensor, target: torch.Tensor, debug=False
+    ) -> torch.Tensor:
+        """
+        Uses one binary channel: 1 - fg, 0 - bg
+        pred: (b, 1, x, y, z) or (b, 1, x, y)
+        target: (b, 1, x, y, z) or (b, 1, x, y)
+        """
+        assert pred.dim() == 4 or pred.dim() == 5, "Only 2D and 3D supported"
+        assert (
+            pred.dim() == target.dim()
+        ), "Prediction and target need to be of same dimension"
+
+        # pred = torch.sigmoid(pred)
+
+        pred_dt = torch.from_numpy(self.distance_field(pred.cpu().numpy())).float()
+        target_dt = torch.from_numpy(self.distance_field(target.cpu().numpy())).float()
+
+        pred_error = (pred - target) ** 2
+        distance = pred_dt ** self.alpha + target_dt ** self.alpha
+
+        dt_field = pred_error.cpu() * distance
+        loss = dt_field.mean()
+
+        if debug:
+            return (
+                loss.cpu().numpy(),
+                (
+                    dt_field.cpu().numpy()[0, 0],
+                    pred_error.cpu().numpy()[0, 0],
+                    distance.cpu().numpy()[0, 0],
+                    pred_dt.cpu().numpy()[0, 0],
+                    target_dt.cpu().numpy()[0, 0],
+                ),
+            )
+
+        else:
+            return loss
+
+class HausdorffDistance:
+    def hd_distance(self, x: np.ndarray, y: np.ndarray) -> np.ndarray:
+
+        if np.count_nonzero(x) == 0 or np.count_nonzero(y) == 0:
+            return np.array([np.Inf])
+
+        indexes = np.nonzero(x)
+        distances = edt(np.logical_not(y))
+
+        return np.array(np.max(distances[indexes]))
+
+    def compute(self, pred: torch.Tensor, target: torch.Tensor) -> torch.Tensor:
+        assert (
+            pred.shape[1] == 1 and target.shape[1] == 1
+        ), "Only binary channel supported"
+
+        pred = (pred > 0.5).byte()
+        target = (target > 0.5).byte()
+
+        right_hd = torch.from_numpy(
+            self.hd_distance(pred.cpu().numpy(), target.cpu().numpy())
+        ).float()
+
+        left_hd = torch.from_numpy(
+            self.hd_distance(target.cpu().numpy(), pred.cpu().numpy())
+        ).float()
+
+        return torch.max(right_hd, left_hd)

@@ -67,7 +67,7 @@ def resize_sample(x, size=256):
     volume = resize(
         volume,
         output_shape=out_shape,
-        order=2,
+        order=1,
         mode="constant",
         cval=0,
         anti_aliasing=False,

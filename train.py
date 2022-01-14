@@ -69,7 +69,7 @@ def main(args,seed):
 
     wandb.login()
     wandb.init()
-    wandb_logger = WandbLogger(project="lit-wandb")
+    wandb_logger = WandbLogger(project="UNet_pytorch")
     trainloader, valoader = data_loaders(args,seed)
     model = UNet()
     tb_logger = pl_loggers.TensorBoardLogger('logs_acm_dice/')
@@ -98,7 +98,7 @@ if __name__ == '__main__':
     parser.add_argument("--workers",type=int,default=1, help="number of workers for data loading (default: 4)")
     parser.add_argument("--weights", type=str, default="./weights", help="folder to save weights")
     parser.add_argument("--images", type=str, default="./data/kaggle_3m", help="root folder with images")
-    parser.add_argument("--image-size",type=int,default=64,help="target input image size (default: 256)")
+    parser.add_argument("--image-size",type=int,default=256,help="target input image size (default: 256)")
     parser.add_argument("--aug-scale",type=int,default=0.05,help="scale factor range for augmentation (default: 0.05)")
     parser.add_argument("--aug-angle",type=int,default=15,help="rotation angle range in degrees for augmentation (default: 15)")
     args = parser.parse_args()
