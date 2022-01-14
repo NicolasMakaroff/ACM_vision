@@ -1,0 +1,22 @@
+{
+    "os": "macOS-10.16-x86_64-i386-64bit",
+    "python": "3.8.2",
+    "heartbeatAt": "2022-01-14T09:58:56.732562",
+    "startedAt": "2022-01-14T09:58:53.940173",
+    "docker": null,
+    "cpu_count": 4,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "train.py",
+    "codePath": "train.py",
+    "git": {
+        "remote": "https://github.com/NicolasMakaroff/ACM_vision.git",
+        "commit": "d00dc53400a4b3b7bdba99a8177c8635e78a9c1d"
+    },
+    "email": "nicolas.makaroff@ens-paris-saclay.fr",
+    "root": "/Users/makaroff/Documents/UNet_pytorch",
+    "host": "MBA13MAKAROFF",
+    "username": "makaroff",
+    "executable": "/Users/makaroff/Documents/UNet_pytorch/bin/python3"
+}

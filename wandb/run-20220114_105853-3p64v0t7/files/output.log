@@ -1,0 +1,26 @@
+
+reading train images...
+Traceback (most recent call last):
+  File "train.py", line 107, in <module>
+    main(args,42)
+  File "train.py", line 73, in main
+    trainloader, valoader = data_loaders(args,seed)
+  File "train.py", line 24, in data_loaders
+    dataset_train, dataset_valid = datasets(args,seed)
+  File "train.py", line 49, in datasets
+    train = Dataset(
+  File "/Users/makaroff/Documents/UNet_pytorch/utils/dataset.py", line 37, in __init__
+    mask_slices.append(imread(filepath, as_gray=True))
+  File "/Users/makaroff/Documents/UNet_pytorch/lib/python3.8/site-packages/skimage/io/_io.py", line 48, in imread
+    img = call_plugin('imread', fname, plugin=plugin, **plugin_args)
+  File "/Users/makaroff/Documents/UNet_pytorch/lib/python3.8/site-packages/skimage/io/manage_plugins.py", line 207, in call_plugin
+    return func(*args, **kwargs)
+  File "/Users/makaroff/Documents/UNet_pytorch/lib/python3.8/site-packages/skimage/io/_plugins/tifffile_plugin.py", line 30, in imread
+    return tifffile_imread(fname, **kwargs)
+  File "/Users/makaroff/Documents/UNet_pytorch/lib/python3.8/site-packages/tifffile/tifffile.py", line 784, in imread
+    return tif.asarray(**kwargs)
+  File "/Users/makaroff/Documents/UNet_pytorch/lib/python3.8/site-packages/tifffile/tifffile.py", line 3115, in asarray
+    result = self.filehandle.read_array(
+  File "/Users/makaroff/Documents/UNet_pytorch/lib/python3.8/site-packages/tifffile/tifffile.py", line 9352, in read_array
+    n = self._fh.readinto(result)
+KeyboardInterrupt
