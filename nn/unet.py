@@ -3,9 +3,10 @@ from collections import OrderedDict
 import torch
 import torch.nn as nn
 import numpy as np
+from utils.metrics import compute_pre_rec, HausdorffDistance
 import wandb
 import pytorch_lightning as pl
-from utils.loss import ACMLoss, DiceLoss, HausdorffDistance
+from utils.loss import ACMLoss, DiceLoss
 from utils.utils import  gray2rgb, wb_mask, image2np
 
 acm_loss = ACMLoss()
@@ -136,6 +137,7 @@ class UNet(pl.LightningModule):
         #val_loss = acm_loss(y_hat, y)
         dsc = dsc_loss(y_hat,y)
         hdd = hd_loss.compute(y_hat, y).item()
+        precision, recall = compute_pre_rec(y, y_hat)
         #self.log('val_loss', val_loss, prog_bar=False, on_step=False, on_epoch=True, logger=True)
         self.log('val_dsc',dsc, prog_bar=False, on_step=False,on_epoch=True, logger=True)
         self.log('val_haussdorf',hdd, prog_bar=False, on_step=False,on_epoch=True, logger=True)
