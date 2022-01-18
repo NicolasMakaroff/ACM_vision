@@ -137,10 +137,14 @@ class UNet(pl.LightningModule):
         #val_loss = acm_loss(y_hat, y)
         dsc = dsc_loss(y_hat,y)
         hdd = hd_loss.compute(y_hat, y).item()
-        precision, recall = compute_pre_rec(y, y_hat)
+        precision, recall, f1 = compute_pre_rec(y.cpu().numpy(), y_hat.cpu().numpy())
         #self.log('val_loss', val_loss, prog_bar=False, on_step=False, on_epoch=True, logger=True)
         self.log('val_dsc',dsc, prog_bar=False, on_step=False,on_epoch=True, logger=True)
         self.log('val_haussdorf',hdd, prog_bar=False, on_step=False,on_epoch=True, logger=True)
+        self.log('precision',precision, prog_bar=False, on_step=False,on_epoch=True, logger=True)
+        self.log('recall', recall, prog_bar=False, on_step=False,on_epoch=True, logger=True)
+        self.log('F1', f1, prog_bar=False, on_step=False,on_epoch=True, logger=True)
+
         return dsc
 
 class ImagePredictionLogger(pl.Callback):
