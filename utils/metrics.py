@@ -68,6 +68,7 @@ def compute_pre_rec(gt,mask,mybins=np.arange(0,256)/255):
     #print(np.min(mask))
     precision_sum = 0
     recall_sum = 0
+    specificity = 0
     for i in range(gt.shape[0]):
         x = gt[i]
         #print(x.shape)
@@ -87,8 +88,9 @@ def compute_pre_rec(gt,mask,mybins=np.arange(0,256)/255):
 
         precision_sum += true_positive / (true_positive + false_positive + 1e-12)
         recall_sum += true_positive / (true_positive + false_negative + 1e-12)
-        
+        specificity = true_negative / (true_negative + false_negative + 1e-12 )
+
     precision = precision_sum / gt.shape[0]
     recall = recall_sum / gt.shape[0]
     f1 = 2 * (precision * recall)/(precision + recall)
-    return precision, recall, f1
+    return precision, recall, specificity, f1

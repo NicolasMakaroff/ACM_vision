@@ -67,9 +67,9 @@ def makedirs(args):
 def main(args,seed):
     makedirs(args)
 
-    wandb.login()
-    wandb.init()
-    wandb_logger = WandbLogger(project="UNet_pytorch")
+    #wandb.login()
+    wandb.init(group='ddp')
+    wandb_logger = WandbLogger(project="UNet_pytorch",group='ddp')
     trainloader, valoader = data_loaders(args,seed)
     model = UNet()
     samples = next(iter(valoader))
@@ -79,7 +79,7 @@ def main(args,seed):
         accelerator='ddp',
         logger = wandb_logger,
         #progress_bar_refresh_rate=0,
-        max_epochs=50,
+        max_epochs=args.epochs,
         #benchmark=True,
         check_val_every_n_epoch=1,
         callbacks=[ImagePredictionLogger(samples)]

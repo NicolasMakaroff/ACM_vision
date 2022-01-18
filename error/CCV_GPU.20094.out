@@ -1,0 +1,123 @@
+wandb: Currently logged in as: nicolasmva (use `wandb login --relogin` to force relogin)
+wandb: Currently logged in as: nicolasmva (use `wandb login --relogin` to force relogin)
+wandb: Tracking run with wandb version 0.12.9
+wandb: Syncing run soft-armadillo-41
+wandb:  View project at https://wandb.ai/nicolasmva/UNet_pytorch
+wandb:  View run at https://wandb.ai/nicolasmva/UNet_pytorch/runs/161pm4b4
+wandb: Run data is saved locally in /mnt/nfs/rdata02-users/users/makaroff/UNet_pytorch/wandb/run-20220118_145329-161pm4b4
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Tracking run with wandb version 0.12.9
+wandb: Syncing run easy-armadillo-42
+wandb:  View project at https://wandb.ai/nicolasmva/UNet_pytorch
+wandb:  View run at https://wandb.ai/nicolasmva/UNet_pytorch/runs/1j7sy8lq
+wandb: Run data is saved locally in /mnt/nfs/rdata02-users/users/makaroff/UNet_pytorch/wandb/run-20220118_155329-1j7sy8lq
+wandb: Run `wandb offline` to turn off syncing.
+  0% 0/100 [00:00<?, ?it/s]100% 100/100 [00:00<00:00, 998643.81it/s]
+  0% 0/100 [00:00<?, ?it/s]100% 100/100 [00:00<00:00, 728177.78it/s]
+  0% 0/100 [00:00<?, ?it/s]  3% 3/100 [00:00<00:03, 27.68it/s]  6% 6/100 [00:00<00:03, 28.11it/s]  9% 9/100 [00:00<00:03, 26.82it/s] 12% 12/100 [00:00<00:03, 26.12it/s] 15% 15/100 [00:00<00:03, 22.39it/s] 18% 18/100 [00:00<00:03, 20.74it/s] 21% 21/100 [00:01<00:04, 16.63it/s] 23% 23/100 [00:01<00:05, 14.64it/s] 25% 25/100 [00:01<00:05, 13.31it/s] 27% 27/100 [00:01<00:05, 12.49it/s] 29% 29/100 [00:01<00:05, 12.05it/s] 31% 31/100 [00:01<00:05, 12.94it/s] 33% 33/100 [00:02<00:04, 14.01it/s] 35% 35/100 [00:02<00:04, 14.63it/s] 37% 37/100 [00:02<00:04, 15.09it/s] 39% 39/100 [00:02<00:04, 15.03it/s] 41% 41/100 [00:02<00:03, 15.11it/s] 43% 43/100 [00:02<00:03, 15.19it/s] 45% 45/100 [00:02<00:03, 15.57it/s] 47% 47/100 [00:02<00:03, 15.80it/s] 49% 49/100 [00:03<00:03, 15.51it/s] 51% 51/100 [00:03<00:03, 14.53it/s] 54% 54/100 [00:03<00:02, 16.24it/s] 56% 56/100 [00:03<00:02, 15.56it/s] 58% 58/100 [00:03<00:02, 16.13it/s] 60% 60/100 [00:03<00:02, 14.14it/s] 62% 62/100 [00:03<00:02, 14.62it/s]  0% 0/100 [00:00<?, ?it/s]  3% 3/100 [00:00<00:03, 27.29it/s]  6% 6/100 [00:00<00:03, 28.05it/s]  9% 9/100 [00:00<00:03, 26.80it/s] 12% 12/100 [00:00<00:03, 26.08it/s] 15% 15/100 [00:00<00:03, 22.42it/s] 18% 18/100 [00:00<00:03, 20.87it/s] 21% 21/100 [00:01<00:04, 16.78it/s] 23% 23/100 [00:01<00:05, 14.73it/s] 25% 25/100 [00:01<00:05, 13.33it/s] 27% 27/100 [00:01<00:05, 12.46it/s] 29% 29/100 [00:01<00:05, 12.00it/s] 31% 31/100 [00:01<00:05, 12.88it/s] 33% 33/100 [00:02<00:04, 14.03it/s] 35% 35/100 [00:02<00:04, 14.64it/s] 37% 37/100 [00:02<00:04, 15.20it/s] 39% 39/100 [00:02<00:04, 15.10it/s] 41% 41/100 [00:02<00:03, 15.01it/s] 43% 43/100 [00:02<00:03, 15.14it/s] 45% 45/100 [00:02<00:03, 15.52it/s] 47% 47/100 [00:02<00:03, 15.77it/s] 49% 49/100 [00:03<00:03, 15.57it/s] 51% 51/100 [00:03<00:03, 14.60it/s] 54% 54/100 [00:03<00:02, 16.29it/s] 56% 56/100 [00:03<00:02, 15.54it/s] 58% 58/100 [00:03<00:02, 16.12it/s] 60% 60/100 [00:03<00:02, 14.10it/s] 62% 62/100 [00:03<00:02, 14.60it/s] 64% 64/100 [00:04<00:02, 14.14it/s] 66% 66/100 [00:04<00:02, 12.94it/s] 68% 68/100 [00:04<00:02, 12.99it/s] 70% 70/100 [00:04<00:02, 12.34it/s] 73% 73/100 [00:04<00:01, 14.71it/s] 76% 76/100 [00:04<00:01, 17.10it/s] 79% 79/100 [00:04<00:01, 19.69it/s] 82% 82/100 [00:05<00:00, 20.98it/s] 85% 85/100 [00:05<00:00, 22.19it/s] 88% 88/100 [00:05<00:00, 17.87it/s] 91% 91/100 [00:05<00:00, 19.49it/s] 94% 94/100 [00:05<00:00, 21.52it/s] 97% 97/100 [00:05<00:00, 22.02it/s]100% 100/100 [00:06<00:00, 14.62it/s]100% 100/100 [00:06<00:00, 16.21it/s]
+ 64% 64/100 [00:04<00:02, 14.19it/s] 66% 66/100 [00:04<00:02, 12.98it/s] 68% 68/100 [00:04<00:02, 13.07it/s] 70% 70/100 [00:04<00:02, 12.29it/s] 73% 73/100 [00:04<00:01, 14.73it/s] 76% 76/100 [00:04<00:01, 16.85it/s] 79% 79/100 [00:04<00:01, 19.50it/s] 82% 82/100 [00:05<00:00, 20.89it/s] 85% 85/100 [00:05<00:00, 22.11it/s] 88% 88/100 [00:05<00:00, 18.12it/s] 91% 91/100 [00:05<00:00, 19.70it/s] 94% 94/100 [00:05<00:00, 21.80it/s] 97% 97/100 [00:05<00:00, 22.17it/s]100% 100/100 [00:06<00:00, 14.77it/s]100% 100/100 [00:06<00:00, 16.24it/s]
+  0% 0/100 [00:00<?, ?it/s] 26% 26/100 [00:00<00:00, 247.28it/s] 51% 51/100 [00:00<00:00, 229.84it/s] 77% 77/100 [00:00<00:00, 241.64it/s]100% 100/100 [00:00<00:00, 240.47it/s]
+  0% 0/100 [00:00<?, ?it/s] 26% 26/100 [00:00<00:00, 253.34it/s] 52% 52/100 [00:00<00:00, 231.53it/s] 77% 77/100 [00:00<00:00, 238.97it/s]100% 100/100 [00:00<00:00, 239.44it/s]
+  0% 0/100 [00:00<?, ?it/s]  2% 2/100 [00:00<00:07, 13.49it/s]  4% 4/100 [00:00<00:06, 15.20it/s]  6% 6/100 [00:00<00:06, 14.91it/s]  8% 8/100 [00:00<00:06, 14.19it/s] 10% 10/100 [00:00<00:06, 14.24it/s] 12% 12/100 [00:00<00:06, 13.62it/s] 14% 14/100 [00:01<00:06, 12.31it/s] 16% 16/100 [00:01<00:07, 10.70it/s] 18% 18/100 [00:01<00:07, 10.30it/s] 20% 20/100 [00:01<00:10,  7.99it/s] 21% 21/100 [00:02<00:09,  7.94it/s] 22% 22/100 [00:02<00:10,  7.21it/s] 23% 23/100 [00:02<00:11,  6.48it/s] 24% 24/100 [00:02<00:12,  6.21it/s] 25% 25/100 [00:02<00:12,  5.80it/s] 26% 26/100 [00:02<00:13,  5.57it/s] 27% 27/100 [00:03<00:13,  5.61it/s] 28% 28/100 [00:03<00:13,  5.32it/s] 29% 29/100 [00:03<00:13,  5.43it/s] 30% 30/100 [00:03<00:11,  6.09it/s] 31% 31/100 [00:03<00:10,  6.52it/s] 32% 32/100 [00:03<00:09,  7.10it/s] 33% 33/100 [00:04<00:08,  7.63it/s] 34% 34/100 [00:04<00:08,  7.86it/s] 35% 35/100 [00:04<00:07,  8.16it/s] 36% 36/100 [00:04<00:07,  8.18it/s] 37% 37/100 [00:04<00:07,  8.13it/s]  0% 0/100 [00:00<?, ?it/s]  2% 2/100 [00:00<00:07, 13.57it/s]  4% 4/100 [00:00<00:06, 15.36it/s]  6% 6/100 [00:00<00:06, 15.17it/s]  8% 8/100 [00:00<00:06, 14.44it/s] 10% 10/100 [00:00<00:06, 14.46it/s] 12% 12/100 [00:00<00:06, 13.73it/s] 14% 14/100 [00:01<00:06, 12.37it/s] 16% 16/100 [00:01<00:07, 10.71it/s] 18% 18/100 [00:01<00:07, 10.37it/s] 20% 20/100 [00:01<00:09,  8.04it/s] 21% 21/100 [00:01<00:09,  7.99it/s] 22% 22/100 [00:02<00:10,  7.26it/s] 23% 23/100 [00:02<00:11,  6.55it/s] 24% 24/100 [00:02<00:12,  6.27it/s] 25% 25/100 [00:02<00:12,  5.86it/s] 26% 26/100 [00:02<00:13,  5.58it/s] 27% 27/100 [00:03<00:12,  5.63it/s] 28% 28/100 [00:03<00:13,  5.36it/s] 29% 29/100 [00:03<00:12,  5.48it/s] 30% 30/100 [00:03<00:11,  6.14it/s] 31% 31/100 [00:03<00:10,  6.58it/s] 32% 32/100 [00:03<00:09,  7.13it/s] 33% 33/100 [00:03<00:08,  7.69it/s] 34% 34/100 [00:04<00:08,  7.90it/s] 35% 35/100 [00:04<00:07,  8.19it/s] 36% 36/100 [00:04<00:07,  8.25it/s] 37% 37/100 [00:04<00:07,  8.23it/s] 38% 38/100 [00:04<00:07,  8.10it/s] 39% 39/100 [00:04<00:07,  7.85it/s] 40% 40/100 [00:04<00:07,  7.74it/s] 41% 41/100 [00:05<00:07,  7.86it/s] 42% 42/100 [00:05<00:07,  7.85it/s] 43% 43/100 [00:05<00:07,  7.95it/s] 44% 44/100 [00:05<00:06,  8.17it/s] 45% 45/100 [00:05<00:06,  8.15it/s] 46% 46/100 [00:05<00:06,  8.14it/s] 47% 47/100 [00:05<00:06,  8.24it/s] 48% 48/100 [00:05<00:06,  7.99it/s] 49% 49/100 [00:06<00:06,  7.75it/s] 50% 50/100 [00:06<00:06,  7.97it/s] 51% 51/100 [00:06<00:07,  6.85it/s] 53% 53/100 [00:06<00:05,  8.34it/s] 54% 54/100 [00:06<00:05,  8.39it/s] 56% 56/100 [00:06<00:05,  8.19it/s] 58% 58/100 [00:07<00:04,  8.62it/s] 59% 59/100 [00:07<00:05,  7.95it/s] 60% 60/100 [00:07<00:05,  6.88it/s] 61% 61/100 [00:07<00:05,  6.70it/s] 63% 63/100 [00:07<00:04,  8.01it/s] 64% 64/100 [00:07<00:04,  7.23it/s] 65% 65/100 [00:08<00:05,  6.80it/s] 66% 66/100 [00:08<00:05,  6.22it/s] 67% 67/100 [00:08<00:05,  6.03it/s] 68% 68/100 [00:08<00:04,  6.47it/s] 69% 69/100 [00:08<00:05, 38% 38/100 [00:04<00:07,  8.19it/s] 39% 39/100 [00:04<00:07,  7.92it/s] 40% 40/100 [00:04<00:07,  7.79it/s] 41% 41/100 [00:04<00:07,  7.89it/s] 42% 42/100 [00:05<00:07,  7.86it/s] 43% 43/100 [00:05<00:07,  7.98it/s] 44% 44/100 [00:05<00:06,  8.23it/s] 45% 45/100 [00:05<00:06,  8.22it/s] 46% 46/100 [00:05<00:06,  8.21it/s] 47% 47/100 [00:05<00:06,  8.35it/s] 48% 48/100 [00:05<00:06,  8.06it/s] 49% 49/100 [00:05<00:06,  7.80it/s] 50% 50/100 [00:06<00:06,  8.02it/s] 51% 51/100 [00:06<00:07,  6.88it/s] 53% 53/100 [00:06<00:05,  8.43it/s] 54% 54/100 [00:06<00:05,  8.49it/s] 56% 56/100 [00:06<00:05,  8.27it/s] 58% 58/100 [00:07<00:04,  8.67it/s] 59% 59/100 [00:07<00:05,  7.97it/s] 60% 60/100 [00:07<00:05,  6.93it/s] 61% 61/100 [00:07<00:05,  6.74it/s] 63% 63/100 [00:07<00:04,  8.08it/s] 64% 64/100 [00:07<00:04,  7.25it/s] 65% 65/100 [00:08<00:05,  6.81it/s] 66% 66/100 [00:08<00:05,  6.24it/s] 67% 67/100 [00:08<00:05,  6.07it/s] 68% 68/100 [00:08<00:04,  6.52it/s] 69% 69/100 [00:08<00:05,  5.58it/s] 70% 70/100 [00:09<00:04,  6.32it/s] 71% 71/100 [00:09<00:04,  6.93it/s] 73% 73/100 [00:09<00:03,  8.62it/s] 75% 75/100 [00:09<00:02,  9.91it/s] 77% 77/100 [00:09<00:02, 11.21it/s] 79% 79/100 [00:09<00:01, 12.21it/s] 81% 81/100 [00:09<00:01, 13.26it/s] 83% 83/100 [00:09<00:01, 12.71it/s] 85% 85/100 [00:10<00:01, 12.72it/s] 87% 87/100 [00:10<00:01,  8.75it/s] 89% 89/100 [00:10<00:01, 10.23it/s] 91% 91/100 [00:10<00:00, 10.65it/s] 93% 93/100 [00:10<00:00, 11.84it/s] 95% 95/100 [00:11<00:00, 12.72it/s] 97% 97/100 [00:11<00:00, 12.31it/s] 99% 99/100 [00:11<00:00,  8.45it/s]100% 100/100 [00:11<00:00,  8.35it/s]
+  5.61it/s] 70% 70/100 [00:08<00:04,  6.35it/s] 71% 71/100 [00:09<00:04,  6.95it/s] 73% 73/100 [00:09<00:03,  8.61it/s] 75% 75/100 [00:09<00:02,  9.98it/s] 77% 77/100 [00:09<00:02, 11.30it/s] 79% 79/100 [00:09<00:01, 12.37it/s] 81% 81/100 [00:09<00:01, 13.43it/s] 83% 83/100 [00:09<00:01, 12.81it/s] 85% 85/100 [00:10<00:01, 12.80it/s] 87% 87/100 [00:10<00:01,  8.86it/s] 89% 89/100 [00:10<00:01, 10.34it/s] 91% 91/100 [00:10<00:00, 10.76it/s] 93% 93/100 [00:10<00:00, 11.89it/s] 95% 95/100 [00:11<00:00, 12.83it/s] 97% 97/100 [00:11<00:00, 12.29it/s] 99% 99/100 [00:11<00:00,  8.52it/s]100% 100/100 [00:11<00:00,  8.41it/s]
+  0% 0/100 [00:00<?, ?it/s] 10% 10/100 [00:00<00:00, 94.00it/s] 20% 20/100 [00:00<00:01, 68.28it/s] 28% 28/100 [00:00<00:01, 50.06it/s] 34% 34/100 [00:00<00:01, 51.04it/s] 40% 40/100 [00:00<00:01, 50.68it/s] 46% 46/100 [00:00<00:01, 51.57it/s] 52% 52/100 [00:00<00:00, 51.15it/s] 58% 58/100 [00:01<00:00, 52.91it/s] 64% 64/100 [00:01<00:00, 50.05it/s] 70% 70/100 [00:01<00:00, 46.55it/s] 79% 79/100 [00:01<00:00, 56.40it/s] 86% 86/100 [00:01<00:00, 56.77it/s] 95% 95/100 [00:01<00:00, 64.93it/s]100% 100/100 [00:01<00:00, 54.94it/s]
+  0% 0/10 [00:00<?, ?it/s]100% 10/10 [00:00<00:00, 291271.11it/s]
+  0% 0/100 [00:00<?, ?it/s] 10% 10/100 [00:00<00:00, 95.96it/s] 20% 20/100 [00:00<00:01, 68.14it/s] 28% 28/100 [00:00<00:01, 50.49it/s] 34% 34/100 [00:00<00:01, 51.49it/s] 40% 40/100 [00:00<00:01, 51.20it/s] 46% 46/100 [00:00<00:01, 52.21it/s] 52% 52/100 [00:00<00:00, 51.33it/s] 58% 58/100 [00:01<00:00, 53.21it/s] 64% 64/100 [00:01<00:00, 50.11it/s] 70% 70/100 [00:01<00:00, 46.44it/s] 79% 79/100 [00:01<00:00, 56.36it/s] 86% 86/100 [00:01<00:00, 55.97it/s] 95% 95/100 [00:01<00:00, 64.17it/s]100% 100/100 [00:01<00:00, 54.90it/s]
+  0% 0/10 [00:00<?, ?it/s]100% 10/10 [00:00<00:00, 291271.11it/s]
+  0% 0/10 [00:00<?, ?it/s] 20% 2/10 [00:00<00:00, 11.16it/s] 40% 4/10 [00:00<00:00, 10.47it/s] 70% 7/10 [00:00<00:00, 13.65it/s]100% 10/10 [00:00<00:00, 14.83it/s]100% 10/10 [00:00<00:00, 13.78it/s]
+  0% 0/10 [00:00<?, ?it/s]100% 10/10 [00:00<00:00, 431.05it/s]
+  0% 0/10 [00:00<?, ?it/s] 20% 2/10 [00:00<00:00, 11.17it/s] 40% 4/10 [00:00<00:00, 10.51it/s] 70% 7/10 [00:00<00:00, 13.83it/s]100% 10/10 [00:00<00:00, 14.95it/s]100% 10/10 [00:00<00:00, 13.89it/s]
+  0% 0/10 [00:00<?, ?it/s]100% 10/10 [00:00<00:00, 389.23it/s]
+  0% 0/10 [00:00<?, ?it/s] 10% 1/10 [00:00<00:01,  7.58it/s] 20% 2/10 [00:00<00:01,  5.74it/s] 30% 3/10 [00:00<00:01,  4.18it/s] 50% 5/10 [00:00<00:00,  7.16it/s] 70% 7/10 [00:01<00:00,  7.40it/s] 90% 9/10 [00:01<00:00,  8.88it/s]100% 10/10 [00:01<00:00,  7.22it/s]
+  0% 0/10 [00:00<?, ?it/s] 10% 1/10 [00:00<00:01,  7.75it/s] 20% 2/10 [00:00<00:01,  5.77it/s] 30% 3/10 [00:00<00:01,  4.16it/s] 50% 5/10 [00:00<00:00,  7.17it/s] 70% 7/10 [00:01<00:00,  7.40it/s] 90% 9/10 [00:01<00:00,  8.89it/s]100% 10/10 [00:01<00:00,  7.23it/s]
+  0% 0/10 [00:00<?, ?it/s] 50% 5/10 [00:00<00:00, 46.77it/s]100% 10/10 [00:00<00:00, 50.89it/s]
+/mnt/nfs/rdata02-users/users/makaroff/UNet2D/lib/python3.8/site-packages/pytorch_lightning/trainer/connectors/accelerator_connector.py:286: LightningDeprecationWarning: Passing `Trainer(accelerator='ddp')` has been deprecated in v1.5 and will be removed in v1.7. Use `Trainer(strategy='ddp')` instead.
+  rank_zero_deprecation(
+Multi-processing is handled by Slurm.
+GPU available: True, used: True
+TPU available: False, using: 0 TPU cores
+  0% 0/10 [00:00<?, ?it/s] 50% 5/10 [00:00<00:00, 46.78it/s]100% 10/10 [00:00<00:00, 50.36it/s]
+initializing distributed: GLOBAL_RANK: 1, MEMBER: 2/2
+IPU available: False, using: 0 IPUs
+initializing distributed: GLOBAL_RANK: 0, MEMBER: 1/2
+----------------------------------------------------------------------------------------------------
+distributed_backend=nccl
+All distributed processes registered. Starting with 2 processes
+----------------------------------------------------------------------------------------------------
+
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+Set SLURM handle signals.
+Set SLURM handle signals.
+
+   | Name       | Type            | Params
+------------------------------------------------
+0  | encoder1   | Sequential      | 10.2 K
+1  | pool1      | MaxPool2d       | 0     
+2  | encoder2   | Sequential      | 55.6 K
+3  | pool2      | MaxPool2d       | 0     
+4  | encoder3   | Sequential      | 221 K 
+5  | pool3      | MaxPool2d       | 0     
+6  | encoder4   | Sequential      | 885 K 
+7  | pool4      | MaxPool2d       | 0     
+8  | bottleneck | Sequential      | 3.5 M 
+9  | upconv4    | ConvTranspose2d | 524 K 
+10 | decoder4   | Sequential      | 1.8 M 
+11 | upconv3    | ConvTranspose2d | 131 K 
+12 | decoder3   | Sequential      | 442 K 
+13 | upconv2    | ConvTranspose2d | 32.8 K
+14 | decoder2   | Sequential      | 110 K 
+15 | upconv1    | ConvTranspose2d | 8.2 K 
+16 | decoder1   | Sequential      | 27.8 K
+17 | conv       | Conv2d          | 33    
+------------------------------------------------
+7.8 M     Trainable params
+0         Non-trainable params
+7.8 M     Total params
+31.052    Total estimated model params size (MB)
+[W reducer.cpp:1303] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+[W reducer.cpp:1303] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+/mnt/nfs/rdata02-users/users/makaroff/UNet_pytorch/utils/metrics.py:93: RuntimeWarning: invalid value encountered in double_scalars
+  f1 = 2 * (precision * recall)/(precision + recall)
+wandb: Waiting for W&B process to finish, PID 3469181... (success).
+/mnt/nfs/rdata02-users/users/makaroff/UNet2D/lib/python3.8/site-packages/pytorch_lightning/callbacks/model_checkpoint.py:631: UserWarning: Checkpoint directory /mnt/nfs/rdata02-users/users/makaroff/UNet_pytorch/None/version_None/checkpoints exists and is not empty.
+  rank_zero_warn(f"Checkpoint directory {dirpath} exists and is not empty.")
+/mnt/nfs/rdata02-users/users/makaroff/UNet2D/lib/python3.8/site-packages/pytorch_lightning/trainer/data_loading.py:132: UserWarning: The dataloader, val_dataloader 0, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 40 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+/mnt/nfs/rdata02-users/users/makaroff/UNet_pytorch/utils/metrics.py:93: RuntimeWarning: invalid value encountered in double_scalars
+  f1 = 2 * (precision * recall)/(precision + recall)
+/mnt/nfs/rdata02-users/users/makaroff/UNet2D/lib/python3.8/site-packages/pytorch_lightning/trainer/data_loading.py:132: UserWarning: The dataloader, train_dataloader, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 40 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+/mnt/nfs/rdata02-users/users/makaroff/UNet2D/lib/python3.8/site-packages/pytorch_lightning/loggers/wandb.py:341: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+wandb: Waiting for W&B process to finish, PID 2688311... (success).
+wandb: - 2.48MB of 2.48MB uploaded (0.00MB deduped)wandb: \ 2.48MB of 2.48MB uploaded (0.00MB deduped)wandb: | 2.48MB of 2.49MB uploaded (0.00MB deduped)wandb: / 2.49MB of 2.49MB uploaded (0.00MB deduped)wandb: - 2.49MB of 2.49MB uploaded (0.00MB deduped)wandb: \ 2.49MB of 2.49MB uploaded (0.00MB deduped)wandb: | 2.49MB of 2.49MB uploaded (0.00MB deduped)wandb: / 2.49MB of 2.49MB uploaded (0.00MB deduped)wandb: - 2.49MB of 2.49MB uploaded (0.00MB deduped)wandb: \ 2.49MB of 2.49MB uploaded (0.00MB deduped)wandb:                                                                                
+wandb: - 2.41MB of 2.41MB uploaded (0.00MB deduped)wandb: \ 2.41MB of 2.41MB uploaded (0.00MB deduped)wandb: | 2.41MB of 2.41MB uploaded (0.00MB deduped)wandb: / 2.40MB of 2.41MB uploaded (0.00MB deduped)wandb: - 2.41MB of 2.41MB uploaded (0.00MB deduped)wandb: \ 2.41MB of 2.41MB uploaded (0.00MB deduped)wandb: | 2.41MB of 2.41MB uploaded (0.00MB deduped)wandb: / 2.41MB of 2.41MB uploaded (0.00MB deduped)wandb: - 2.41MB of 2.41MB uploaded (0.00MB deduped)wandb: \ 2.41MB of 2.41MB uploaded (0.00MB deduped)wandb: | 2.41MB of 2.41MB uploaded (0.00MB deduped)wandb: / 2.41MB of 2.41MB uploaded (0.00MB deduped)wandb: - 2.41MB of 2.41MB uploaded (0.00MB deduped)wandb: \ 2.41MB of 2.41MB uploaded (0.00MB deduped)wandb:                                                                                
+wandb: Run history:
+wandb:                    F1 ▁▂▂▄▅▆▆▇▇▆▇▇▇▇▇▇█▇█▇█▇█▇███▇██▇██▇█████▇
+wandb:                 epoch ▁▁▁▁▂▂▂▂▂▃▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇███
+wandb:                  loss ████▇▇▇▇▆▆▅▅▄▄▄▃▃▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             precision ▁▂▂▃▄▅▅▅▆▄▆▆▆▇▆▆▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇████▇
+wandb:                recall ██▇▇▇▅▇▇▇▇▅▅▅▅▄▅▅▄▄▁▅▃▃▃▄▄▅▃▄▄▄▄▄▃▃▄▄▄▂▃
+wandb:   trainer/global_step ▁▁▁▁▂▂▂▂▂▃▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇███
+wandb:               val_dsc ███▇▇▇▆▆▅▅▄▃▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:         val_haussdorf █▃▃▂▁▁▁▁▁▂▁▁▁▁▁▁▁▁▁▂▁▁▁▁▁▁▂▁▁▂▁▁▂▂▁▁▁▁▂▁
+wandb: 
+wandb: Run summary:
+wandb:                    F1 0.82
+wandb:                 epoch 49
+wandb:                  loss 0.14899
+wandb:             precision 0.85118
+wandb:                recall 0.79152
+wandb:   trainer/global_step 5199
+wandb:               val_dsc 0.11911
+wandb:         val_haussdorf 4.69581
+wandb: 
+wandb: Synced 5 W&B file(s), 1530 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Synced easy-armadillo-42: https://wandb.ai/nicolasmva/UNet_pytorch/runs/1j7sy8lq
+wandb: Find logs at: ./wandb/run-20220118_155329-1j7sy8lq/logs/debug.log
+wandb: 
+wandb: Synced 5 W&B file(s), 1530 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Synced soft-armadillo-41: https://wandb.ai/nicolasmva/UNet_pytorch/runs/161pm4b4
+wandb: Find logs at: ./wandb/run-20220118_145329-161pm4b4/logs/debug.log
+wandb: 

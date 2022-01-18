@@ -17,6 +17,10 @@ class UNet(pl.LightningModule):
 
     def __init__(self, in_channels=3, out_channels=1, init_features=32):
         super(UNet, self).__init__()
+        
+        #acc = DiceLoss()
+        #self.train_acc = acc.clone()
+        #self.valid_acc = acc.clone()
 
         features = init_features
         self.encoder1 = UNet._block(in_channels, features, name="enc1")
@@ -117,35 +121,54 @@ class UNet(pl.LightningModule):
         x, y_true = batch
         y_pred = self(x)
         #loss = acm_loss(y_pred, y_true)
-        loss_info = dsc_loss(y_pred,y_true)
-        logs={"train_loss": loss_info}
-        batch_dictionary={
-            #REQUIRED: It ie required for us to return "loss"
-            "loss": loss_info,
-            #"dice": loss_info,
-            #optional for batch logging purposes
-            "log": logs,
-        }
-        self.log('loss', loss_info, prog_bar = False, on_step=False,on_epoch=True,logger=True)
-        #self.log('dice', loss_info, prog_bar=False, on_step=False, on_epoch=True, logger=True)
+        loss = dsc_loss(y_pred,y_true)
+        #self.log('loss', loss_info, prog_bar = False, on_step=False,on_epoch=True,logger=True)
 
-        return loss_info
+        return {'loss':loss} #{'loss':loss, 'preds': y_preds, 'targets': y_true}
+    
+    def training_step_end(self, outs):
+        # log accuracy on each step_end, for compatibility with data-parallel
+        #self.train_acc(outs["preds"], outs["targets"])
+        self.log("train/acc_step", outs)
  
+    def training_epoch_end(self, outs):
+        # additional log mean accuracy at the end of the epoch
+        self.log("train/acc_epoch", outs['loss'])
+
     def validation_step(self, batch, batch_idx):
         x, y = batch
         y_hat = self(x)
         #val_loss = acm_loss(y_hat, y)
         dsc = dsc_loss(y_hat,y)
         hdd = hd_loss.compute(y_hat, y).item()
-        precision, recall, f1 = compute_pre_rec(y.cpu().numpy(), y_hat.cpu().numpy())
+        precision, recall, specificity, f1 = compute_pre_rec(y.cpu().numpy(), y_hat.cpu().numpy())
         #self.log('val_loss', val_loss, prog_bar=False, on_step=False, on_epoch=True, logger=True)
-        self.log('val_dsc',dsc, prog_bar=False, on_step=False,on_epoch=True, logger=True)
-        self.log('val_haussdorf',hdd, prog_bar=False, on_step=False,on_epoch=True, logger=True)
-        self.log('precision',precision, prog_bar=False, on_step=False,on_epoch=True, logger=True)
-        self.log('recall', recall, prog_bar=False, on_step=False,on_epoch=True, logger=True)
-        self.log('F1', f1, prog_bar=False, on_step=False,on_epoch=True, logger=True)
+        #self.log('val_dsc',dsc, prog_bar=False, on_step=False,on_epoch=True, logger=True)
+        #self.log('val_haussdorf',hdd, prog_bar=False, on_step=False,on_epoch=True, logger=True)
+        #self.log('precision',precision, prog_bar=False, on_step=False,on_epoch=True, logger=True)
+        #self.log('recall', recall, prog_bar=False, on_step=False,on_epoch=True, logger=True)
+        #self.log('F1', f1, prog_bar=False, on_step=False,on_epoch=True, logger=True)
+        #self.log('specificity', specificity, prog_bar=False, on_step=False,on_epoch=True, logger=True)
 
-        return dsc
+        return {'dice': dsc, 'hausdorff': hdd, 'precision': precision, 'recall': recall, 'specificity': specificity, 'F1': f1} 
+
+    def validation_step_end(self, outs):
+        self.log('test/dice', outs['dice'], prog_bar=False, on_step=False,on_epoch=True, logger=True)
+        self.log('test/hausdorff', outs['hausdorff'], prog_bar=False, on_step=False, on_epoch=True, logger=True)
+        self.log('test/precision', outs['precision'], prog_bar=False, on_step=False, on_epoch=True, logger=True)
+        self.log('test/recall', outs['recall'], prog_bar=False, on_step=False, on_epoch=True, logger=True)
+        self.log('test/specificity', outs['specificity'], prog_bar=False, on_step=False, on_epoch=True, logger=True)
+        self.log('test/F1', outs['F1'], prog_bar=False, on_step=False, on_epoch=True, logger=True)
+
+    def validation_epoch_end(self, outs):
+        outs = outs[0]
+        self.log('test/dice', outs['dice'], prog_bar=False, on_step=False,on_epoch=True, logger=True)
+        self.log('test/hausdorff', outs['hausdorff'], prog_bar=False, on_step=False, on_epoch=True, logger=True)
+        self.log('test/precision', outs['precision'], prog_bar=False, on_step=False, on_epoch=True, logger=True)
+        self.log('test/recall', outs['recall'], prog_bar=False, on_step=False, on_epoch=True, logger=True)
+        self.log('test/specificity', outs['specificity'], prog_bar=False, on_step=False, on_epoch=True, logger=True)
+        self.log('test/F1', outs['F1'], prog_bar=False, on_step=False, on_epoch=True, logger=True)
+
 
 class ImagePredictionLogger(pl.Callback):
     def __init__(self, val_samples, num_samples=10):

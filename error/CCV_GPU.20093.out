@@ -1,0 +1,145 @@
+  0%|          | 0/100 [00:00<?, ?it/s]100%|██████████| 100/100 [00:00<00:00, 1003422.01it/s]
+  0%|          | 0/100 [00:00<?, ?it/s]100%|██████████| 100/100 [00:00<00:00, 832203.17it/s]
+  0%|          | 0/100 [00:00<?, ?it/s]  3%|▎         | 3/100 [00:00<00:03, 27.82it/s]  6%|▌         | 6/100 [00:00<00:03, 28.36it/s]  9%|▉         | 9/100 [00:00<00:03, 27.06it/s] 12%|█▏        | 12/100 [00:00<00:03, 26.34it/s] 15%|█▌        | 15/100 [00:00<00:03, 22.84it/s] 18%|█▊        | 18/100 [00:00<00:03, 21.10it/s] 21%|██        | 21/100 [00:01<00:04, 16.68it/s] 23%|██▎       | 23/100 [00:01<00:05, 14.66it/s] 25%|██▌       | 25/100 [00:01<00:05, 13.34it/s] 27%|██▋       | 27/100 [00:01<00:05, 12.54it/s] 29%|██▉       | 29/100 [00:01<00:05, 12.10it/s] 31%|███       | 31/100 [00:01<00:05, 12.90it/s] 33%|███▎      | 33/100 [00:02<00:04, 14.05it/s] 35%|███▌      | 35/100 [00:02<00:04, 14.65it/s] 37%|███▋      | 37/100 [00:02<00:04, 15.18it/s] 39%|███▉      | 39/100 [00:02<00:04, 15.07it/s] 41%|████      | 41/100 [00:02<00:03, 15.15it/s] 43%|████▎     | 43/100 [00:02<00:03, 15.32it/s] 4  0%|          | 0/100 [00:00<?, ?it/s]  3%|▎         | 3/100 [00:00<00:03, 27.01it/s]  6%|▌         | 6/100 [00:00<00:03, 27.85it/s]  9%|▉         | 9/100 [00:00<00:03, 26.70it/s] 12%|█▏        | 12/100 [00:00<00:03, 26.15it/s] 15%|█▌        | 15/100 [00:00<00:03, 22.66it/s] 18%|█▊        | 18/100 [00:00<00:03, 20.96it/s] 21%|██        | 21/100 [00:01<00:04, 16.52it/s] 23%|██▎       | 23/100 [00:01<00:05, 14.53it/s] 25%|██▌       | 25/100 [00:01<00:05, 13.22it/s] 27%|██▋       | 27/100 [00:01<00:05, 12.43it/s] 29%|██▉       | 29/100 [00:01<00:05, 11.98it/s] 31%|███       | 31/100 [00:01<00:05, 12.88it/s] 33%|███▎      | 33/100 [00:02<00:04, 13.90it/s] 35%|███▌      | 35/100 [00:02<00:04, 14.45it/s] 37%|███▋      | 37/100 [00:02<00:04, 15.03it/s] 39%|███▉      | 39/100 [00:02<00:04, 14.95it/s] 41%|████      | 41/100 [00:02<00:03, 14.98it/s] 43%|████▎     | 43/100 [00:02<00:03, 15.16it/s] 45%|████▌     | 45/100 [00:02<00:03, 15.61it/s] 47%|████▋     | 47/100 [00:02<00:03, 15.71it/s] 49%|████▉     | 49/100 [00:03<00:03, 15.58it/s] 51%|█████     | 51/100 [00:03<00:03, 14.55it/s] 54%|█████▍    | 54/100 [00:03<00:02, 16.22it/s] 56%|█████▌    | 56/100 [00:03<00:02, 15.56it/s] 58%|█████▊    | 58/100 [00:03<00:02, 16.19it/s] 60%|██████    | 60/100 [00:03<00:02, 14.19it/s] 62%|██████▏   | 62/100 [00:03<00:02, 14.56it/s] 64%|██████▍   | 64/100 [00:04<00:02, 14.14it/s] 66%|██████▌   | 66/100 [00:04<00:02, 12.93it/s] 68%|██████▊   | 68/100 [00:04<00:02, 12.99it/s] 70%|███████   | 70/100 [00:04<00:02, 12.35it/s] 73%|███████▎  | 73/100 [00:04<00:01, 14.77it/s] 76%|███████▌  | 76/100 [00:04<00:01, 17.17it/s] 79%|███████▉  | 79/100 [00:04<00:01, 19.63it/s] 82%|████████▏ | 82/100 [00:05<00:00, 20.99it/s] 85%|████████▌ | 85/100 [00:05<00:00, 22.20it/s] 88%|████████▊ | 88/100 [00:05<00:00, 18.22it/s] 91%|█████████ | 91/100 [00:05<00:00, 19.81it/s] 94%|█████████▍| 94/100 [00:05<00:00, 21.86it/s] 97%|█████████▋| 97/100 [00:05<00:00, 22.30it/s]100%|██████████| 100/100 [00:06<00:00, 14.62it/s]100%|██████████| 100/100 [00:06<00:00, 16.27it/s]
+  0%|          | 0/100 [00:00<?, ?it/s] 24%|██▍       | 24/100 [00:00<00:00, 232.05it/s] 48%|████▊     | 48/100 [00:00<00:00, 209.91it/s] 70%|███████   | 70/100 [00:00<00:00, 213.92it/s] 97%|█████████▋| 97/100 [00:00<00:00, 232.68it/s]100%|██████████| 100/100 [00:00<00:00, 221.83it/s]
+5%|████▌     | 45/100 [00:02<00:03, 15.51it/s] 47%|████▋     | 47/100 [00:02<00:03, 15.71it/s] 49%|████▉     | 49/100 [00:03<00:03, 15.40it/s] 51%|█████     | 51/100 [00:03<00:03, 14.41it/s] 54%|█████▍    | 54/100 [00:03<00:02, 16.08it/s] 56%|█████▌    | 56/100 [00:03<00:02, 15.43it/s] 58%|█████▊    | 58/100 [00:03<00:02, 16.05it/s] 60%|██████    | 60/100 [00:03<00:02, 14.05it/s] 62%|██████▏   | 62/100 [00:03<00:02, 14.55it/s] 64%|██████▍   | 64/100 [00:04<00:02, 13.98it/s] 66%|██████▌   | 66/100 [00:04<00:02, 12.75it/s] 68%|██████▊   | 68/100 [00:04<00:02, 12.86it/s] 70%|███████   | 70/100 [00:04<00:02, 12.28it/s] 73%|███████▎  | 73/100 [00:04<00:01, 14.70it/s] 76%|███████▌  | 76/100 [00:04<00:01, 17.06it/s] 79%|███████▉  | 79/100 [00:04<00:01, 19.56it/s] 82%|████████▏ | 82/100 [00:05<00:00, 20.72it/s] 85%|████████▌ | 85/100 [00:05<00:00, 21.94it/s] 88%|████████▊ | 88/100 [00:05<00:00, 18.07it/s] 91%|█████████ | 91/100 [00:05<00:00, 19.66it/s] 94%|█████████▍| 94/100 [00:05<00:00, 21.69it/s] 97%|█████████▋| 97/100 [00:05<00:00, 22.10it/s]100%|██████████| 100/100 [00:06<00:00, 14.50it/s]100%|██████████| 100/100 [00:06<00:00, 16.13it/s]
+  0%|          | 0/100 [00:00<?, ?it/s] 24%|██▍       | 24/100 [00:00<00:00, 227.37it/s] 47%|████▋     | 47/100 [00:00<00:00, 208.43it/s] 69%|██████▉   | 69/100 [00:00<00:00, 209.60it/s] 96%|█████████▌| 96/100 [00:00<00:00, 229.47it/s]100%|██████████| 100/100 [00:00<00:00, 219.17it/s]
+  0%|          | 0/100 [00:00<?, ?it/s]  2%|▏         | 2/100 [00:00<00:07, 13.64it/s]  4%|▍         | 4/100 [00:00<00:06, 15.22it/s]  6%|▌         | 6/100 [00:00<00:06, 15.05it/s]  8%|▊         | 8/100 [00:00<00:06, 14.33it/s] 10%|█         | 10/100 [00:00<00:06, 14.43it/s] 12%|█▏        | 12/100 [00:00<00:06, 13.75it/s] 14%|█▍        | 14/100 [00:01<00:06, 12.48it/s] 16%|█▌        | 16/100 [00:01<00:07, 10.82it/s] 18%|█▊        | 18/100 [00:01<00:07, 10.48it/s] 20%|██        | 20/100 [00:01<00:09,  8.09it/s] 21%|██        | 21/100 [00:01<00:09,  8.07it/s] 22%|██▏       | 22/100 [00:02<00:10,  7.33it/s] 23%|██▎       | 23/100 [00:02<00:11,  6.56it/s] 24%|██▍       | 24/100 [00:02<00:12,  6.29it/s] 25%|██▌       | 25/100 [00:02<00:12,  5.89it/s] 26%|██▌       | 26/100 [00:02<00:13,  5.64it/s] 27%|██▋       | 27/100 [00:03<00:12,  5.71it/s] 28%|██▊       | 28/100 [00:03<00:13,  5.39it/s] 29%|██▉       | 29/100  0%|          | 0/100 [00:00<?, ?it/s]  2%|▏         | 2/100 [00:00<00:07, 13.64it/s]  4%|▍         | 4/100 [00:00<00:06, 15.39it/s]  6%|▌         | 6/100 [00:00<00:06, 14.99it/s]  8%|▊         | 8/100 [00:00<00:06, 14.31it/s] 10%|█         | 10/100 [00:00<00:06, 14.41it/s] 12%|█▏        | 12/100 [00:00<00:06, 13.76it/s] 14%|█▍        | 14/100 [00:01<00:06, 12.50it/s] 16%|█▌        | 16/100 [00:01<00:07, 10.90it/s] 18%|█▊        | 18/100 [00:01<00:07, 10.42it/s] 20%|██        | 20/100 [00:01<00:09,  8.09it/s] 21%|██        | 21/100 [00:01<00:09,  8.07it/s] 22%|██▏       | 22/100 [00:02<00:10,  7.34it/s] 23%|██▎       | 23/100 [00:02<00:11,  6.57it/s] 24%|██▍       | 24/100 [00:02<00:12,  6.29it/s] 25%|██▌       | 25/100 [00:02<00:12,  5.90it/s] 26%|██▌       | 26/100 [00:02<00:13,  5.65it/s] 27%|██▋       | 27/100 [00:03<00:12,  5.73it/s] 28%|██▊       | 28/100 [00:03<00:13,  5.43it/s] 29%|██▉       | 29/100 [00:03<00:12,  5.51it/s] 30%|███       | 30/100 [00:03<00:11,  6.18it/s] 31%|███       | 31/100 [00:03<00:10,  6.63it/s] 32%|███▏      | 32/100 [00:03<00:09,  7.21it/s] 33%|███▎      | 33/100 [00:03<00:08,  7.78it/s] 34%|███▍      | 34/100 [00:04<00:08,  7.99it/s] 35%|███▌      | 35/100 [00:04<00:07,  8.29it/s] 36%|███▌      | 36/100 [00:04<00:07,  8.27it/s] 37%|███▋      | 37/100 [00:04<00:07,  8.22it/s] 38%|███▊      | 38/100 [00:04<00:07,  8.19it/s] 39%|███▉      | 39/100 [00:04<00:07,  7.94it/s] 40%|████      | 40/100 [00:04<00:07,  7.84it/s] 41%|████      | 41/100 [00:04<00:07,  7.99it/s] 42%|████▏     | 42/100 [00:05<00:07,  7.97it/s] 43%|████▎     | 43/100 [00:05<00:07,  8.08it/s] 44%|████▍     | 44/100 [00:05<00:06,  8.27it/s] 45%|████▌     | 45/100 [00:05<00:06,  8.28it/s] 46%|████▌     | 46/100 [00:05<00:06,  8.26it/s] 47%|████▋    [00:03<00:12,  5.48it/s] 30%|███       | 30/100 [00:03<00:11,  6.16it/s] 31%|███       | 31/100 [00:03<00:10,  6.59it/s] 32%|███▏      | 32/100 [00:03<00:09,  7.18it/s] 33%|███▎      | 33/100 [00:03<00:08,  7.79it/s] 34%|███▍      | 34/100 [00:04<00:08,  8.02it/s] 35%|███▌      | 35/100 [00:04<00:07,  8.30it/s] 36%|███▌      | 36/100 [00:04<00:07,  8.36it/s] 37%|███▋      | 37/100 [00:04<00:07,  8.24it/s] 38%|███▊      | 38/100 [00:04<00:07,  8.22it/s] 39%|███▉      | 39/100 [00:04<00:07,  7.97it/s] 40%|████      | 40/100 [00:04<00:07,  7.86it/s] 41%|████      | 41/100 [00:04<00:07,  8.01it/s] 42%|████▏     | 42/100 [00:05<00:07,  8.01it/s] 43%|████▎     | 43/100 [00:05<00:07,  8.12it/s] 44%|████▍     | 44/100 [00:05<00:06,  8.37it/s] 45%|████▌     | 45/100 [00:05<00:06,  8.25it/s] 46%|████▌     | 46/100 [00:05<00:06,  8.26it/s] 47%|████▋     | 47/100 [00:05<00:06,  8.42it/s] 48%|████▊     | 48/100 [00:05<00:06,  8.17it/s] 49%|████▉     | 49/100 [00:05<00:06,  8.01it/s] 50%|█████     | 50/100 [00:06<00:06,  8.24it/s] 51%|█████     | 51/100 [00:06<00:06,  7.00it/s] 53%|█████▎    | 53/100 [00:06<00:05,  8.47it/s] 54%|█████▍    | 54/100 [00:06<00:05,  8.52it/s] 56%|█████▌    | 56/100 [00:06<00:05,  8.25it/s] 58%|█████▊    | 58/100 [00:06<00:04,  8.69it/s] 59%|█████▉    | 59/100 [00:07<00:05,  8.00it/s] 60%|██████    | 60/100 [00:07<00:05,  6.91it/s] 61%|██████    | 61/100 [00:07<00:05,  6.74it/s] 63%|██████▎   | 63/100 [00:07<00:04,  8.06it/s] 64%|██████▍   | 64/100 [00:07<00:04,  7.28it/s] 65%|██████▌   | 65/100 [00:08<00:05,  6.89it/s] 66%|██████▌   | 66/100 [00:08<00:05,  6.29it/s] 67%|██████▋   | 67/100 [00:08<00:05,  6.06it/s] 68%|█�  | 47/100 [00:05<00:06,  8.41it/s] 48%|████▊     | 48/100 [00:05<00:06,  8.19it/s] 49%|████▉     | 49/100 [00:05<00:06,  8.00it/s] 50%|█████     | 50/100 [00:06<00:06,  8.22it/s] 51%|█████     | 51/100 [00:06<00:07,  6.99it/s] 53%|█████▎    | 53/100 [00:06<00:05,  8.45it/s] 54%|█████▍    | 54/100 [00:06<00:05,  8.50it/s] 56%|█████▌    | 56/100 [00:06<00:05,  8.25it/s] 58%|█████▊    | 58/100 [00:06<00:04,  8.71it/s] 59%|█████▉    | 59/100 [00:07<00:05,  8.02it/s] 60%|██████    | 60/100 [00:07<00:05,  6.96it/s] 61%|██████    | 61/100 [00:07<00:05,  6.74it/s] 63%|██████▎   | 63/100 [00:07<00:04,  8.09it/s] 64%|██████▍   | 64/100 [00:07<00:04,  7.30it/s] 65%|██████▌   | 65/100 [00:08<00:05,  6.90it/s] 66%|██████▌   | 66/100 [00:08<00:05,  6.29it/s] 67%|██████▋   | 67/100 [00:08<00:05,  6.07it/s] 68%|██████▊   | 68/100 [00:08<00:04,  6.52it/s] 69%|██████▉   | 69/100 [00:08<00:05,  5.60it/s] 70%|███████   | 70/100 [00:08<00:04,  6.38it/s] 71%|███████   | 71/100 [00:08<00:04,  7.00it/s] 73%|███████▎  | 73/100 [00:09<00:03,  8.69it/s] 75%|███████▌  | 75/100 [00:09<00:02,  9.98it/s] 77%|███████▋  | 77/100 [00:09<00:02, 11.28it/s] 79%|███████▉  | 79/100 [00:09<00:01, 12.33it/s] 81%|████████  | 81/100 [00:09<00:01, 13.37it/s] 83%|████████▎ | 83/100 [00:09<00:01, 12.85it/s] 85%|████████▌ | 85/100 [00:10<00:01, 12.92it/s] 87%|████████▋ | 87/100 [00:10<00:01,  8.85it/s] 89%|████████▉ | 89/100 [00:10<00:01, 10.35it/s] 91%|█████████ | 91/100 [00:10<00:00, 10.77it/s] 93%|█████████▎| 93/100 [00:10<00:00, 11.95it/s] 95%|█████████▌| 95/100 [00:10<00:00, 12.90it/s] 97%|█████████▋| 97/100 [00:11<00:00, 12.42it/s] 99%|█████████▉| 99/100 [00:11<00:00,  8.52it/s]100%|██████████| 100/100 [00:11<00:00,  8.45it/s]
+�████▊   | 68/100 [00:08<00:04,  6.53it/s] 69%|██████▉   | 69/100 [00:08<00:05,  5.62it/s] 70%|███████   | 70/100 [00:08<00:04,  6.40it/s] 71%|███████   | 71/100 [00:08<00:04,  7.04it/s] 73%|███████▎  | 73/100 [00:09<00:03,  8.73it/s] 75%|███████▌  | 75/100 [00:09<00:02, 10.08it/s] 77%|███████▋  | 77/100 [00:09<00:02, 11.26it/s] 79%|███████▉  | 79/100 [00:09<00:01, 12.34it/s] 81%|████████  | 81/100 [00:09<00:01, 13.41it/s] 83%|████████▎ | 83/100 [00:09<00:01, 12.90it/s] 85%|████████▌ | 85/100 [00:10<00:01, 12.95it/s] 87%|████████▋ | 87/100 [00:10<00:01,  8.85it/s] 89%|████████▉ | 89/100 [00:10<00:01, 10.38it/s] 91%|█████████ | 91/100 [00:10<00:00, 10.79it/s] 93%|█████████▎| 93/100 [00:10<00:00, 11.99it/s] 95%|█████████▌| 95/100 [00:10<00:00, 12.96it/s] 97%|█████████▋| 97/100 [00:11<00:00, 12.50it/s] 99%|█████████▉| 99/100 [00:11<00:00,  8.55it/s]100%|██████████| 100/100 [00:11<00:00,  8.46it/s]
+  0%|          | 0/100 [00:00<?, ?it/s] 10%|█         | 10/100 [00:00<00:00, 97.64it/s] 20%|██        | 20/100 [00:00<00:01, 69.32it/s] 28%|██▊       | 28/100 [00:00<00:01, 50.79it/s] 34%|███▍      | 34/100 [00:00<00:01, 51.79it/s] 40%|████      | 40/100 [00:00<00:01, 51.50it/s] 46%|████▌     | 46/100 [00:00<00:01, 52.53it/s] 52%|█████▏    | 52/100 [00:00<00:00, 51.28it/s] 58%|█████▊    | 58/100 [00:01<00:00, 53.19it/s] 64%|██████▍   | 64/100 [00:01<00:00, 50.29it/s] 70%|███████   | 70/100 [00:01<00:00, 46.40it/s] 78%|███████▊  | 78/100 [00:01<00:00, 54.76it/s] 86%|████████▌ | 86/100 [00:01<00:00, 56.88it/s] 95%|█████████▌| 95/100 [00:01<00:00, 65.04it/s]100%|██████████| 100/100 [00:01<00:00, 55.21it/s]
+  0%|          | 0/10 [00:00<?, ?it/s]100%|██████████| 10/10 [00:00<00:00, 190650.18it/s]
+  0%|          | 0/10 [00:00<?, ?it/s] 20%|██        | 2/10 [00:00<00:00, 11.31it/s] 40%|████      | 4/10 [00:00<00:00, 10.50it/s] 70%|███████   | 7/10 [00:00<00:00, 13.65it/s]100%|██████████| 10/10 [00:00<00:00, 14.84it/s]100%|██████████| 10/10 [00:00<00:00, 13.80it/s]
+  0%|          | 0/10 [00:00<?, ?it/s]100%|██████████| 10/10 [00:00<00:00, 446.14it/s]
+  0%|          | 0/100 [00:00<?, ?it/s] 10%|█         | 10/100 [00:00<00:00, 96.09it/s] 20%|██        | 20/100 [00:00<00:01, 69.33it/s] 28%|██▊       | 28/100 [00:00<00:01, 50.72it/s] 34%|███▍      | 34/100 [00:00<00:01, 51.42it/s] 40%|████      | 40/100 [00:00<00:01, 50.91it/s] 46%|████▌     | 46/100 [00:00<00:01, 51.68it/s] 52%|█████▏    | 52/100 [00:00<00:00, 50.92it/s] 58%|█████▊    | 58/100 [00:01<00:00, 52.71it/s] 64%|██████▍   | 64/100 [00:01<00:00, 50.02it/s] 70%|███████   | 70/100 [00:01<00:00, 46.09it/s] 79%|███████▉  | 79/100 [00:01<00:00, 55.88it/s] 86%|████████▌ | 86/100 [00:01<00:00, 55.80it/s] 95%|█████████▌| 95/100 [00:01<00:00, 63.96it/s]100%|██████████| 100/100 [00:01<00:00, 54.76it/s]
+  0%|          | 0/10 [00:00<?, ?it/s]100%|██████████| 10/10 [00:00<00:00, 186413.51it/s]
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:00<00:01,  8.25it/s] 20%|██        | 2/10 [00:00<00:01,  6.47it/s] 30%|███       | 3/10 [00:00<00:01,  4.72it/s] 50%|█████     | 5/10 [00:00<00:00,  7.91it/s] 70%|███████   | 7/10 [00:00<00:00,  8.05it/s] 90%|█████████ | 9/10 [00:01<00:00,  9.49it/s]100%|██████████| 10/10 [00:01<00:00,  7.84it/s]
+  0%|          | 0/10 [00:00<?, ?it/s] 20%|██        | 2/10 [00:00<00:00, 11.42it/s] 40%|████      | 4/10 [00:00<00:00, 10.62it/s] 70%|███████   | 7/10 [00:00<00:00, 13.98it/s]100%|██████████| 10/10 [00:00<00:00, 15.04it/s]100%|██████████| 10/10 [00:00<00:00, 14.00it/s]
+  0%|          | 0/10 [00:00<?, ?it/s]100%|██████████| 10/10 [00:00<00:00, 402.43it/s]
+  0%|          | 0/10 [00:00<?, ?it/s] 50%|█████     | 5/10 [00:00<00:00, 48.01it/s]100%|██████████| 10/10 [00:00<00:00, 52.64it/s]
+initializing distributed: GLOBAL_RANK: 1, MEMBER: 2/2
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:00<00:01,  8.59it/s] 20%|██        | 2/10 [00:00<00:01,  6.56it/s] 30%|███       | 3/10 [00:00<00:01,  4.50it/s] 50%|█████     | 5/10 [00:00<00:00,  7.66it/s] 70%|███████   | 7/10 [00:00<00:00,  7.77it/s] 90%|█████████ | 9/10 [00:01<00:00,  9.32it/s]100%|██████████| 10/10 [00:01<00:00,  7.73it/s]
+  0%|          | 0/10 [00:00<?, ?it/s] 50%|█████     | 5/10 [00:00<00:00, 47.23it/s]100%|██████████| 10/10 [00:00<00:00, 51.66it/s]
+/mnt/nfs/rdata02-users/users/makaroff/UNet2D/lib/python3.8/site-packages/pytorch_lightning/trainer/connectors/accelerator_connector.py:286: LightningDeprecationWarning: Passing `Trainer(accelerator='ddp')` has been deprecated in v1.5 and will be removed in v1.7. Use `Trainer(strategy='ddp')` instead.
+  rank_zero_deprecation(
+Multi-processing is handled by Slurm.
+GPU available: True, used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+initializing distributed: GLOBAL_RANK: 0, MEMBER: 1/2
+----------------------------------------------------------------------------------------------------
+distributed_backend=nccl
+All distributed processes registered. Starting with 2 processes
+----------------------------------------------------------------------------------------------------
+
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+Set SLURM handle signals.
+Set SLURM handle signals.
+
+   | Name       | Type            | Params
+------------------------------------------------
+0  | encoder1   | Sequential      | 10.2 K
+1  | pool1      | MaxPool2d       | 0     
+2  | encoder2   | Sequential      | 55.6 K
+3  | pool2      | MaxPool2d       | 0     
+4  | encoder3   | Sequential      | 221 K 
+5  | pool3      | MaxPool2d       | 0     
+6  | encoder4   | Sequential      | 885 K 
+7  | pool4      | MaxPool2d       | 0     
+8  | bottleneck | Sequential      | 3.5 M 
+9  | upconv4    | ConvTranspose2d | 524 K 
+10 | decoder4   | Sequential      | 1.8 M 
+11 | upconv3    | ConvTranspose2d | 131 K 
+12 | decoder3   | Sequential      | 442 K 
+13 | upconv2    | ConvTranspose2d | 32.8 K
+14 | decoder2   | Sequential      | 110 K 
+15 | upconv1    | ConvTranspose2d | 8.2 K 
+16 | decoder1   | Sequential      | 27.8 K
+17 | conv       | Conv2d          | 33    
+------------------------------------------------
+7.8 M     Trainable params
+0         Non-trainable params
+7.8 M     Total params
+31.052    Total estimated model params size (MB)
+/mnt/nfs/rdata02-users/users/makaroff/UNet2D/lib/python3.8/site-packages/pytorch_lightning/callbacks/model_checkpoint.py:631: UserWarning: Checkpoint directory /mnt/nfs/rdata02-users/users/makaroff/UNet_pytorch/None/version_None/checkpoints exists and is not empty.
+  rank_zero_warn(f"Checkpoint directory {dirpath} exists and is not empty.")
+/mnt/nfs/rdata02-users/users/makaroff/UNet2D/lib/python3.8/site-packages/pytorch_lightning/trainer/data_loading.py:132: UserWarning: The dataloader, val_dataloader 0, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 40 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+Traceback (most recent call last):
+  File "train.py", line 106, in <module>
+    main(args,42)
+  File "train.py", line 88, in main
+    trainer.fit(model,trainloader,valoader)
+  File "/mnt/nfs/rdata02-users/users/makaroff/UNet2D/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 740, in fit
+    self._call_and_handle_interrupt(
+  File "/mnt/nfs/rdata02-users/users/makaroff/UNet2D/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 685, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/mnt/nfs/rdata02-users/users/makaroff/UNet2D/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 777, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/mnt/nfs/rdata02-users/users/makaroff/UNet2D/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1199, in _run
+    self._dispatch()
+  File "/mnt/nfs/rdata02-users/users/makaroff/UNet2D/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1279, in _dispatch
+    self.training_type_plugin.start_training(self)
+  File "/mnt/nfs/rdata02-users/users/makaroff/UNet2D/lib/python3.8/site-packages/pytorch_lightning/plugins/training_type/training_type_plugin.py", line 202, in start_training
+    self._results = trainer.run_stage()
+  File "/mnt/nfs/rdata02-users/users/makaroff/UNet2D/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1289, in run_stage
+    return self._run_train()
+  File "/mnt/nfs/rdata02-users/users/makaroff/UNet2D/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1311, in _run_train
+    self._run_sanity_check(self.lightning_module)
+  File "/mnt/nfs/rdata02-users/users/makaroff/UNet2D/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1375, in _run_sanity_check
+    self._evaluation_loop.run()
+  File "/mnt/nfs/rdata02-users/users/makaroff/UNet2D/lib/python3.8/site-packages/pytorch_lightning/loops/base.py", line 151, in run
+    output = self.on_run_end()
+  File "/mnt/nfs/rdata02-users/users/makaroff/UNet2D/lib/python3.8/site-packages/pytorch_lightning/loops/dataloader/evaluation_loop.py", line 134, in on_run_end
+    self._on_evaluation_epoch_end()
+  File "/mnt/nfs/rdata02-users/users/makaroff/UNet2D/lib/python3.8/site-packages/pytorch_lightning/loops/dataloader/evaluation_loop.py", line 241, in _on_evaluation_epoch_end
+    self.trainer.call_hook(hook_name)
+  File "/mnt/nfs/rdata02-users/users/makaroff/UNet2D/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1495, in call_hook
+    callback_fx(*args, **kwargs)
+  File "/mnt/nfs/rdata02-users/users/makaroff/UNet2D/lib/python3.8/site-packages/pytorch_lightning/trainer/callback_hook.py", line 103, in on_validation_epoch_end
+    callback.on_validation_epoch_end(self, self.lightning_module)
+  File "/mnt/nfs/rdata02-users/users/makaroff/UNet_pytorch/nn/unet.py", line 175, in on_validation_epoch_end
+    wandb.log({"predictions" : mask_list})
+  File "/mnt/nfs/rdata02-users/users/makaroff/UNet2D/lib/python3.8/site-packages/wandb/sdk/lib/preinit.py", line 38, in preinit_wrapper
+    raise wandb.Error("You must call wandb.init() before {}()".format(name))
+wandb.errors.Error: You must call wandb.init() before wandb.log()
+Traceback (most recent call last):
+  File "train.py", line 106, in <module>
+    main(args,42)
+  File "train.py", line 88, in main
+    trainer.fit(model,trainloader,valoader)
+  File "/mnt/nfs/rdata02-users/users/makaroff/UNet2D/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 740, in fit
+    self._call_and_handle_interrupt(
+  File "/mnt/nfs/rdata02-users/users/makaroff/UNet2D/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 685, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/mnt/nfs/rdata02-users/users/makaroff/UNet2D/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 777, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/mnt/nfs/rdata02-users/users/makaroff/UNet2D/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1199, in _run
+    self._dispatch()
+  File "/mnt/nfs/rdata02-users/users/makaroff/UNet2D/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1279, in _dispatch
+    self.training_type_plugin.start_training(self)
+  File "/mnt/nfs/rdata02-users/users/makaroff/UNet2D/lib/python3.8/site-packages/pytorch_lightning/plugins/training_type/training_type_plugin.py", line 202, in start_training
+    self._results = trainer.run_stage()
+  File "/mnt/nfs/rdata02-users/users/makaroff/UNet2D/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1289, in run_stage
+    return self._run_train()
+  File "/mnt/nfs/rdata02-users/users/makaroff/UNet2D/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1311, in _run_train
+    self._run_sanity_check(self.lightning_module)
+  File "/mnt/nfs/rdata02-users/users/makaroff/UNet2D/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1375, in _run_sanity_check
+    self._evaluation_loop.run()
+  File "/mnt/nfs/rdata02-users/users/makaroff/UNet2D/lib/python3.8/site-packages/pytorch_lightning/loops/base.py", line 151, in run
+    output = self.on_run_end()
+  File "/mnt/nfs/rdata02-users/users/makaroff/UNet2D/lib/python3.8/site-packages/pytorch_lightning/loops/dataloader/evaluation_loop.py", line 134, in on_run_end
+    self._on_evaluation_epoch_end()
+  File "/mnt/nfs/rdata02-users/users/makaroff/UNet2D/lib/python3.8/site-packages/pytorch_lightning/loops/dataloader/evaluation_loop.py", line 241, in _on_evaluation_epoch_end
+    self.trainer.call_hook(hook_name)
+  File "/mnt/nfs/rdata02-users/users/makaroff/UNet2D/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1495, in call_hook
+    callback_fx(*args, **kwargs)
+  File "/mnt/nfs/rdata02-users/users/makaroff/UNet2D/lib/python3.8/site-packages/pytorch_lightning/trainer/callback_hook.py", line 103, in on_validation_epoch_end
+    callback.on_validation_epoch_end(self, self.lightning_module)
+  File "/mnt/nfs/rdata02-users/users/makaroff/UNet_pytorch/nn/unet.py", line 175, in on_validation_epoch_end
+    wandb.log({"predictions" : mask_list})
+  File "/mnt/nfs/rdata02-users/users/makaroff/UNet2D/lib/python3.8/site-packages/wandb/sdk/lib/preinit.py", line 38, in preinit_wrapper
+    raise wandb.Error("You must call wandb.init() before {}()".format(name))
+wandb.errors.Error: You must call wandb.init() before wandb.log()
+srun: error: clust2: task 0: Exited with exit code 1
+srun: error: clust7: task 1: Exited with exit code 1
