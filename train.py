@@ -20,6 +20,8 @@ from pytorch_lightning.plugins import DDPPlugin
 import matplotlib.pyplot as plt
 import time
 
+from torchvision.models.feature_extraction import get_graph_node_names, create_feature_extractor
+
 def data_loaders(args,seed=1):
     dataset_train, dataset_valid = datasets(args,seed)
 
@@ -67,11 +69,15 @@ def makedirs(args):
 def main(args,seed):
     makedirs(args)
 
-    #wandb.login()
+    wandb.login()
     wandb.init(group='ddp')
     wandb_logger = WandbLogger(project="UNet_pytorch",group='ddp')
     trainloader, valoader = data_loaders(args,seed)
     model = UNet()
+    #nodes, _ = get_graph_node_names(model)
+    #feature_extractor = create_feature_extractor(model, return_nodes=['encoder1.enc1conv1', 'encoder1.enc1norm1', 'encoder1.enc1relu1',])
+    #print(feature_extractor(torch.zeros(1,3,64,64)))
+    
     samples = next(iter(valoader))
     trainer = Trainer(
         gpus=[0],

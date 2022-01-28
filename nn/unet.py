@@ -8,6 +8,9 @@ import wandb
 import pytorch_lightning as pl
 from utils.loss import ACMLoss, DiceLoss
 from utils.utils import  gray2rgb, wb_mask, image2np
+from utils.ccv import CCV
+from torchvision.models.feature_extraction import create_feature_extractor
+from torch import Tensor
 
 acm_loss = ACMLoss()
 dsc_loss = DiceLoss()
@@ -33,7 +36,11 @@ class UNet(pl.LightningModule):
         self.pool4 = nn.MaxPool2d(kernel_size=2, stride=2)
 
         self.bottleneck = UNet._block(features * 8, features * 16, name="bottleneck")
-
+        self.fc1 = nn.Linear(512*4*4,1000)
+        self.fc2 = nn.Linear(1000,128)
+        self.fc3 = nn.Linear(128,32)
+        self.fc4 = nn.Linear(32,2)
+        self.relu = nn.ReLU()
 
         self.upconv4 = nn.ConvTranspose2d(
             features * 16, features * 8, kernel_size=2, stride=2
@@ -55,7 +62,7 @@ class UNet(pl.LightningModule):
         self.conv = nn.Conv2d(
             in_channels=features, out_channels=out_channels, kernel_size=1
         )
-        
+        self.acmattention = ACMAttention()
         
     def forward(self, x):
         enc1 = self.encoder1(x)
@@ -64,7 +71,11 @@ class UNet(pl.LightningModule):
         enc4 = self.encoder4(self.pool3(enc3))
 
         bottleneck = self.bottleneck(self.pool4(enc4))
-
+        x = bottleneck.view(-1,512*4*4)
+        x = self.fc1(x)
+        x = self.fc2(x)
+        x = self.fc3(x)
+        x = self.fc4(x)
         dec4 = self.upconv4(bottleneck)
         dec4 = torch.cat((dec4, enc4), dim=1)
         dec4 = self.decoder4(dec4)
@@ -78,6 +89,43 @@ class UNet(pl.LightningModule):
         dec1 = torch.cat((dec1, enc1), dim=1)
         dec1 = self.decoder1(dec1)
         return torch.sigmoid(self.conv(dec1))
+
+    def forward_retro(self, x):
+        enc1 = self.encoder1(x)
+        enc2 = self.encoder2(self.pool1(enc1))
+        enc3 = self.encoder3(self.pool2(enc2))
+        enc4 = self.encoder4(self.pool3(enc3))
+
+        bottleneck = self.bottleneck(self.pool4(enc4))
+
+        x = bottleneck.view(-1, 512*4*4)
+        x = self.relu(self.fc1(x))
+        x = self.relu(self.fc2(x))
+        x = self.relu(self.fc3(x))
+        x = self.relu(self.fc4(x))
+
+        center = self.upconv4(bottleneck)
+        dec4 = torch.cat((center, enc4), dim=1)
+        alp1 = self.acmattention(enc1, enc4, dec4, dt=x[:,0], lambda_=x[:,1])
+        dec4 = self.decoder4(alp1 * dec4)
+
+        dec3 = self.upconv(dec4)
+        dec3 = torch.cat((dec3, enc3), dim=1)
+        alp2 = self.acmattention(enc1, enc3, dec3, dt=x[:,0], lambda_=x[:,1])
+        dec3 = self.decoder3(dec3)
+
+        dec2 = self.upconv(dec3)
+        dec2 = torch.cat((dec2, enc2), dim=1)
+        alp3 = self.acmattention(enc1, enc2, dec2, dt=x[:,0], lambda_=x[:,1])
+        dec2 = self.decoder2(dec2)
+        
+        dec1 = self.upconv(dec2)
+        dec1 = torch.cat((dec1, enc1), dim=1)
+        alp4 = self.acmattention(enc1, enc1, dec1, dt=x[:,0], lambda_=x[:,1])
+        dec1 = self.decoder1(dec1)
+        
+        return torch.sigmoid(self.conv(dec1))
+
 
     @staticmethod
     def _block(in_channels, features, name):
@@ -120,6 +168,9 @@ class UNet(pl.LightningModule):
 
         x, y_true = batch
         y_pred = self(x)
+        #feature_extractor = create_feature_extractor(self, return_nodes=['decoder2.dec2relu2',])
+        #out = feature_extractor(x)
+        #out['decoder2.dec2.relu2']
         #loss = acm_loss(y_pred, y_true)
         loss = dsc_loss(y_pred,y_true)
         #self.log('loss', loss_info, prog_bar = False, on_step=False,on_epoch=True,logger=True)
@@ -181,6 +232,8 @@ class ImagePredictionLogger(pl.Callback):
         val_imgs = self.val_imgs.to(device=pl_module.device)
 
         logits = pl_module(val_imgs)
+        feature_extractor = create_feature_extractor(self, return_nodes=['decoder2.dec2relu2',])
+        out = feature_extractor(x)['decoder2.dec2relu2'][:,10,:,:]
         mask_list = []
         for original_image, logits, ground_truth in zip(val_imgs, logits, self.val_labels):
             # the raw background image as a numpy array
@@ -196,3 +249,23 @@ class ImagePredictionLogger(pl.Callback):
 
         # log all composite images to W&B
         wandb.log({"predictions" : mask_list})
+        wandb.log({'layer4':wandb.Image(out)})
+
+
+class ACMAttention(nn.Module):
+
+    def __init__(self):
+        super().__init__()
+        self.activation = nn.Sigmoid()
+        self.g_conv = nn.Conv2d(256, 128, kernel_size=1, bias=False)
+        self.x_conv = nn.Conv2d(512, 128, kernel_size=1, bias=False)
+
+    def forward(self, contour: Tensor, g: Tensor, x: Tensor, dt: Tensor, lambda_: Tensor) -> Tensor:
+        z = self.g_conv(g) + self.x_conv(x)
+
+        ccv = CCV(initial_contours = contour, dt=dt, lambda_=lambda_, color=False)
+        attention = ccv(input_tensor=z, maxIter=10, plot=False)
+        
+        alpha = self.activation(attention)
+        return alpha
+         
