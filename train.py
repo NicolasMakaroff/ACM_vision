@@ -69,30 +69,31 @@ def makedirs(args):
 def main(args,seed):
     makedirs(args)
 
-    wandb.login()
-    wandb.init(group='ddp')
-    wandb_logger = WandbLogger(project="UNet_pytorch",group='ddp')
+    #wandb.login()
+    #wandb.init(group='ddp')
+    #wandb_logger = WandbLogger(project="UNet_pytorch",group='ddp')
     trainloader, valoader = data_loaders(args,seed)
     model = UNet()
     #nodes, _ = get_graph_node_names(model)
     #feature_extractor = create_feature_extractor(model, return_nodes=['encoder1.enc1conv1', 'encoder1.enc1norm1', 'encoder1.enc1relu1',])
     #print(feature_extractor(torch.zeros(1,3,64,64)))
+    #print(nodes)
     
     samples = next(iter(valoader))
     trainer = Trainer(
         gpus=[0],
         num_nodes=1,
         accelerator='ddp',
-        logger = wandb_logger,
+        #logger = wandb_logger,
         #progress_bar_refresh_rate=0,
         max_epochs=args.epochs,
         #benchmark=True,
         check_val_every_n_epoch=1,
-        callbacks=[ImagePredictionLogger(samples)]
+        #callbacks=[ImagePredictionLogger(samples)]
     )
 
     trainer.fit(model,trainloader,valoader)
-    wandb.finish()
+    #wandb.finish()
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser( description="Training U-Net model for segmentation of brain MRI")

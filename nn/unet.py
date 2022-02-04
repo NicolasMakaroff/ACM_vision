@@ -27,6 +27,8 @@ class UNet(pl.LightningModule):
 
         features = init_features
         self.encoder1 = UNet._block(in_channels, features, name="enc1")
+        self.encoder11 = UNet._block(features, features, name="enc11")
+        self.encoder12 = UNet._block(features, features, name="enc12")
         self.pool1 = nn.MaxPool2d(kernel_size=2, stride=2)
         self.encoder2 = UNet._block(features, features * 2, name="enc2")
         self.pool2 = nn.MaxPool2d(kernel_size=2, stride=2)
@@ -45,6 +47,7 @@ class UNet(pl.LightningModule):
         self.upconv4 = nn.ConvTranspose2d(
             features * 16, features * 8, kernel_size=2, stride=2
         )
+        self.pool5 = nn.MaxPool2d(kernel_size=2, stride=2)
         self.decoder4 = UNet._block((features * 8) * 2, features * 8, name="dec4")
         self.upconv3 = nn.ConvTranspose2d(
             features * 8, features * 4, kernel_size=2, stride=2
@@ -62,11 +65,16 @@ class UNet(pl.LightningModule):
         self.conv = nn.Conv2d(
             in_channels=features, out_channels=out_channels, kernel_size=1
         )
-        self.acmattention = ACMAttention()
+        self.acmattention4 = ACMAttention(256)
+        self.acmattention3 = ACMAttention(128)
+        self.acmattention2 = ACMAttention(64)
+        self.acmattention1 = ACMAttention(32)
         
-    def forward(self, x):
+    def forward_retro(self, x):
         enc1 = self.encoder1(x)
-        enc2 = self.encoder2(self.pool1(enc1))
+        enc11 = self.encoder11(enc1)
+        enc12 = self.encoder12(enc11)
+        enc2 = self.encoder2(self.pool1(enc12))
         enc3 = self.encoder3(self.pool2(enc2))
         enc4 = self.encoder4(self.pool3(enc3))
 
@@ -90,7 +98,7 @@ class UNet(pl.LightningModule):
         dec1 = self.decoder1(dec1)
         return torch.sigmoid(self.conv(dec1))
 
-    def forward_retro(self, x):
+    def forward(self, x):
         enc1 = self.encoder1(x)
         enc2 = self.encoder2(self.pool1(enc1))
         enc3 = self.encoder3(self.pool2(enc2))
@@ -106,22 +114,22 @@ class UNet(pl.LightningModule):
 
         center = self.upconv4(bottleneck)
         dec4 = torch.cat((center, enc4), dim=1)
-        alp1 = self.acmattention(enc1, enc4, dec4, dt=x[:,0], lambda_=x[:,1])
-        dec4 = self.decoder4(alp1 * dec4)
+        alp1 = self.acmattention4(enc4, enc4, dec4, dt=x[:,0], lambda_=x[:,1])
+        dec4 = self.decoder4(alp1.float() * dec4)
 
-        dec3 = self.upconv(dec4)
+        dec3 = self.upconv3(dec4)
         dec3 = torch.cat((dec3, enc3), dim=1)
-        alp2 = self.acmattention(enc1, enc3, dec3, dt=x[:,0], lambda_=x[:,1])
+        alp2 = self.acmattention3(enc3, enc3, dec3, dt=x[:,0], lambda_=x[:,1])
         dec3 = self.decoder3(dec3)
 
-        dec2 = self.upconv(dec3)
+        dec2 = self.upconv2(dec3)
         dec2 = torch.cat((dec2, enc2), dim=1)
-        alp3 = self.acmattention(enc1, enc2, dec2, dt=x[:,0], lambda_=x[:,1])
+        alp3 = self.acmattention2(enc2, enc2, dec2, dt=x[:,0], lambda_=x[:,1])
         dec2 = self.decoder2(dec2)
         
-        dec1 = self.upconv(dec2)
+        dec1 = self.upconv1(dec2)
         dec1 = torch.cat((dec1, enc1), dim=1)
-        alp4 = self.acmattention(enc1, enc1, dec1, dt=x[:,0], lambda_=x[:,1])
+        alp4 = self.acmattention1(enc1, enc1, dec1, dt=x[:,0], lambda_=x[:,1])
         dec1 = self.decoder1(dec1)
         
         return torch.sigmoid(self.conv(dec1))
@@ -168,9 +176,6 @@ class UNet(pl.LightningModule):
 
         x, y_true = batch
         y_pred = self(x)
-        #feature_extractor = create_feature_extractor(self, return_nodes=['decoder2.dec2relu2',])
-        #out = feature_extractor(x)
-        #out['decoder2.dec2.relu2']
         #loss = acm_loss(y_pred, y_true)
         loss = dsc_loss(y_pred,y_true)
         #self.log('loss', loss_info, prog_bar = False, on_step=False,on_epoch=True,logger=True)
@@ -183,12 +188,20 @@ class UNet(pl.LightningModule):
         self.log("train/acc_step", outs)
  
     def training_epoch_end(self, outs):
+        outs = outs[0]
         # additional log mean accuracy at the end of the epoch
         self.log("train/acc_epoch", outs['loss'])
 
     def validation_step(self, batch, batch_idx):
         x, y = batch
         y_hat = self(x)
+        #feature_extractor = create_feature_extractor(self, return_nodes=['encoder12.enc12relu2',])
+        #out = feature_extractor(x)['encoder12.enc12relu2']
+        #print(type(res))
+        #print(res.shape)
+        #print(out.shape)
+        #for i in range(out.shape[0]):
+            #wandb.log({'layer4':wandb.Image(out[4][i].detach())})
         #val_loss = acm_loss(y_hat, y)
         dsc = dsc_loss(y_hat,y)
         hdd = hd_loss.compute(y_hat, y).item()
@@ -232,8 +245,8 @@ class ImagePredictionLogger(pl.Callback):
         val_imgs = self.val_imgs.to(device=pl_module.device)
 
         logits = pl_module(val_imgs)
-        feature_extractor = create_feature_extractor(self, return_nodes=['decoder2.dec2relu2',])
-        out = feature_extractor(x)['decoder2.dec2relu2'][:,10,:,:]
+        #feature_extractor = create_feature_extractor(self, return_nodes=['decoder2.dec2relu2',])
+        #out = feature_extractor(x)['decoder2.dec2relu2'][:,10,:,:]
         mask_list = []
         for original_image, logits, ground_truth in zip(val_imgs, logits, self.val_labels):
             # the raw background image as a numpy array
@@ -249,20 +262,25 @@ class ImagePredictionLogger(pl.Callback):
 
         # log all composite images to W&B
         wandb.log({"predictions" : mask_list})
-        wandb.log({'layer4':wandb.Image(out)})
 
 
 class ACMAttention(nn.Module):
 
-    def __init__(self):
+    def __init__(self, channels):
         super().__init__()
         self.activation = nn.Sigmoid()
-        self.g_conv = nn.Conv2d(256, 128, kernel_size=1, bias=False)
-        self.x_conv = nn.Conv2d(512, 128, kernel_size=1, bias=False)
-
+        self.g_conv = nn.Conv2d(channels, 512, kernel_size=1, bias=False)
+        self.x_conv = nn.Conv2d(channels*2, 512, kernel_size=1, bias=False)
+        self.contour_conv = nn.Conv2d(channels, 512, kernel_size=1, bias=False)
+        self.relu = nn.ReLU()
+        self.channels = channels
+        
     def forward(self, contour: Tensor, g: Tensor, x: Tensor, dt: Tensor, lambda_: Tensor) -> Tensor:
-        z = self.g_conv(g) + self.x_conv(x)
-
+        z = self.relu(self.g_conv(g)) + self.x_conv(x)
+        print(z.shape)
+        print(contour.shape)
+        contour = self.contour_conv(contour)
+        contour = nn.functional.interpolate(contour, size=(z.shape[2],z.shape[3]),mode='bicubic')
         ccv = CCV(initial_contours = contour, dt=dt, lambda_=lambda_, color=False)
         attention = ccv(input_tensor=z, maxIter=10, plot=False)
         
