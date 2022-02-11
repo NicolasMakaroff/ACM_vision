@@ -41,8 +41,12 @@ class UNet(pl.LightningModule):
         self.fc1 = nn.Linear(512*4*4,1000)
         self.fc2 = nn.Linear(1000,128)
         self.fc3 = nn.Linear(128,32)
-        self.fc4 = nn.Linear(32,2)
+        self.fc41 = nn.Linear(32,4)
+        self.fc42 = nn.Linear(32,2)
         self.relu = nn.ReLU()
+        self.sigmoid = nn.Sigmoid()
+
+        self.ccv = CCV(color=False)
 
         self.upconv4 = nn.ConvTranspose2d(
             features * 16, features * 8, kernel_size=2, stride=2
@@ -83,7 +87,8 @@ class UNet(pl.LightningModule):
         x = self.fc1(x)
         x = self.fc2(x)
         x = self.fc3(x)
-        x = self.fc4(x)
+        y1 = self.fc41(x)
+        y2 = self.fc42(x)
         dec4 = self.upconv4(bottleneck)
         dec4 = torch.cat((dec4, enc4), dim=1)
         dec4 = self.decoder4(dec4)
@@ -106,30 +111,47 @@ class UNet(pl.LightningModule):
 
         bottleneck = self.bottleneck(self.pool4(enc4))
 
-        x = bottleneck.view(-1, 512*4*4)
-        x = self.relu(self.fc1(x))
-        x = self.relu(self.fc2(x))
-        x = self.relu(self.fc3(x))
-        x = self.relu(self.fc4(x))
+        y = bottleneck.view(-1, 512*4*4)
+        y = self.relu(self.fc1(y))
+        y = self.relu(self.fc2(y))
+        y = self.relu(self.fc3(y))
+        y1 = self.sigmoid(self.fc41(y))
+        y2 = self.sigmoid(self.fc42(y))
 
+
+        dt = y2[:,0]
+        lambda_ = y2[:,1]
+        
+
+        c, _,w, h = x.shape
+        u1 = torch.cuda.FloatTensor(c, w, h).fill_(0)
+        for i in range(c):
+            xmin, xmax, ymin, ymax = torch.floor(y1[i,:])
+            u1[i,int(xmin):int(xmax),int(ymin):int(ymax)] = torch.cuda.FloatTensor(int(xmax - xmin),int(ymax-ymin)).fill_(1)
+
+        
+        attention = self.ccv(input_tensor=x, initial_contours = u1, dt=dt, lambda_=lambda_, maxIter=10, plot=False)        
+
+        print(attention.shape)
         center = self.upconv4(bottleneck)
         dec4 = torch.cat((center, enc4), dim=1)
-        alp1 = self.acmattention4(enc4, enc4, dec4, dt=x[:,0], lambda_=x[:,1])
-        dec4 = self.decoder4(alp1.float() * dec4)
+        alp4 = nn.functional.upsample(attention, size=dec4.shape[2:],mode='bilinear')
+        print(alp4.shape)
+        dec4 = self.decoder4(alp4.float() * dec4)
 
         dec3 = self.upconv3(dec4)
         dec3 = torch.cat((dec3, enc3), dim=1)
-        alp2 = self.acmattention3(enc3, enc3, dec3, dt=x[:,0], lambda_=x[:,1])
+        alp3 = nn.functional.interpolate(attention, size=(dec3.shape[2],dec3.shape[3]),mode='bilinear')
         dec3 = self.decoder3(dec3)
 
         dec2 = self.upconv2(dec3)
         dec2 = torch.cat((dec2, enc2), dim=1)
-        alp3 = self.acmattention2(enc2, enc2, dec2, dt=x[:,0], lambda_=x[:,1])
+        alp2 = nn.functional.interpolate(attention, size=(dec2.shape[2],dec2.shape[3]),mode='bilinear')
         dec2 = self.decoder2(dec2)
         
         dec1 = self.upconv1(dec2)
         dec1 = torch.cat((dec1, enc1), dim=1)
-        alp4 = self.acmattention1(enc1, enc1, dec1, dt=x[:,0], lambda_=x[:,1])
+        alp1 = nn.functional.interpolate(attention, size=(dec1.shape[2],dec1.shape[3]),mode='bilinear')
         dec1 = self.decoder1(dec1)
         
         return torch.sigmoid(self.conv(dec1))
@@ -174,7 +196,7 @@ class UNet(pl.LightningModule):
     
     def training_step(self, batch, batch_idx):
 
-        x, y_true = batch
+        x, y_true, bbox = batch
         y_pred = self(x)
         #loss = acm_loss(y_pred, y_true)
         loss = dsc_loss(y_pred,y_true)
@@ -193,7 +215,7 @@ class UNet(pl.LightningModule):
         self.log("train/acc_epoch", outs['loss'])
 
     def validation_step(self, batch, batch_idx):
-        x, y = batch
+        x, y, bbox = batch
         y_hat = self(x)
         #feature_extractor = create_feature_extractor(self, return_nodes=['encoder12.enc12relu2',])
         #out = feature_extractor(x)['encoder12.enc12relu2']

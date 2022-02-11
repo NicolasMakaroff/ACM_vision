@@ -27,20 +27,26 @@ class BrainSegmentationDataset(Dataset):
         # read images
         volumes = {}
         masks = {}
+        bbox = {}
         print("reading {} images...".format(subset))
         for (dirpath, dirnames, filenames) in os.walk(images_dir):
             image_slices = []
             mask_slices = []
+            bbox_slices = []
             for filename in sorted(filter(lambda f: ".tif" in f, filenames), key=lambda x: int(x.split(".")[-2].split("_")[4])):
                 filepath = os.path.join(dirpath, filename)
                 if "mask" in filename:
-                    mask_slices.append(imread(filepath, as_gray=True))
+                    img = imread(filepath, as_gray=True)
+                    mask_slices.append(img)
+                    pos = np.where(img)
+                    #bbox_slices.append([np.min[pos[1]], np.max[pos[1]], np.min[pos[0]], np.max[pos[0]]])
                 else:
                     image_slices.append(imread(filepath))
             if len(image_slices) > 0:
                 patient_id = dirpath.split("/")[-1]
                 volumes[patient_id] = np.array(image_slices[1:-1])
                 masks[patient_id] = np.array(mask_slices[1:-1])
+                #bbox[patient_id] = np.array(bbox_slices[1:-1])
 
         self.patients = sorted(volumes)
 
@@ -130,9 +136,18 @@ class BrainSegmentationDataset(Dataset):
         # fix dimensions (C, H, W)
         image = image.transpose(2, 0, 1)
         mask = mask.transpose(2, 0, 1)
+        pos = np.where(mask)
+        if pos[0].size == 0:
+            bbox = np.array([0,0,0,0])
+        else:
+            xmin = np.min(pos[1]) - 10 if np.min(pos[1]) >= 10 else 0 
+            xmax = np.max(pos[1]) + 10 if (mask.shape[1] - np.max(pos[1])) >= 10 else mask.shape[1]
+            ymin = np.min(pos[0]) - 10 if np.min(pos[0]) >= 10 else 0 
+            ymax = np.max(pos[0]) + 10 if (mask.shape[1] - np.max(pos[0])) >= 10 else mask.shape[1]
+            bbox = np.array([xmin, xmax, ymin, ymax])
 
         image_tensor = torch.from_numpy(image.astype(np.float32))
         mask_tensor = torch.from_numpy(mask.astype(np.float32))
-
+        bbox_tensor = torch.from_numpy(bbox.astype(np.float32))
         # return tensors
-        return image_tensor, mask_tensor
+        return image_tensor, mask_tensor, bbox_tensor
